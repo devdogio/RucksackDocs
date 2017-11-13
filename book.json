@@ -1,3 +1,14 @@
-{
-    "plugins": ["devdog-theme"]
+{    
+    "root": "./",
+    "structure": {
+        "readme": "README.md",
+        "summary": "SUMMARY.md"
+    },
+    "plugins": ["devdog-theme", "toc"],
+    "pluginsConfig": {
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        }
+    }
 }
