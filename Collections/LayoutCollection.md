@@ -14,12 +14,10 @@ Layout collection items have to implement the `IShapeOwner2D` interface to pass 
 public sealed class MyLayoutCollection<TElementType> : LayoutCollection<TElementType>
     where TElementType : IEquatable<TElementType>, IShapeOwner2D, IStackable, IIdentifiable, ICloneable<TElementType>
     {
-
         public MyLayoutCollection(int slotCount, int columnCount)
             : base(slotCount)
         {
 
         }
-
     }
 ```

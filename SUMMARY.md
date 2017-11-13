@@ -13,6 +13,3 @@
 - Items
   - [Items](Items/Items.md)
   - [Custom Item](Items/CustomItem.md)
-
-## TOC TEST
-<!-- toc -->

@@ -4,11 +4,11 @@
         "readme": "README.md",
         "summary": "SUMMARY.md"
     },
-    "plugins": ["devdog-theme", "toc"],
+    "plugins": ["devdog-theme", "github-edit"],
     "pluginsConfig": {
-        "toc": {
-            "addClass": true,
-            "className": "toc"
+        "github-edit": {
+            "repo": "devdogio/InventoryPlusDocs",
+            "branch": "master"
         }
     }
 }
