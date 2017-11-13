@@ -6,7 +6,5 @@
 - [Collection slot](Collections/CollectionSlot.md)
 - [Layout collections](Collections/LayoutCollection.md)
 
-
-
 ## TOC TEST
 <!-- toc -->
