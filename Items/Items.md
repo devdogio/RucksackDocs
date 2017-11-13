@@ -1,6 +1,5 @@
 # Items
 
-
 ## Item Registry
 The ```ItemRegistry``` is responsible for keeping track of all run-time items.
 Keep in mind that if you're going to create a new item instance you'll have to register
@@ -110,7 +109,6 @@ demonFireSword.defence = 10;
 // demonFireSword.weight == 10f (inherited from sword)
 ```
 
-Visual reference:
 ![Nesting](Assets/Nesting.png)
 
 Resetting values to use the parent value.
