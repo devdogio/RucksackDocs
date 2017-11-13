@@ -1,2 +1,5 @@
 
 Docs\.csproj
+
+bin/
+obj/
