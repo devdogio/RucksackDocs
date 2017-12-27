@@ -11,13 +11,16 @@ Layout collection items have to implement the `IShapeOwner2D` interface to pass 
 ## Example of custom collection
 
 ```csharp
+using System;
+using Devdog.InventoryPlus.Collections;
+
 public sealed class MyLayoutCollection<TElementType> : LayoutCollection<TElementType>
     where TElementType : IEquatable<TElementType>, IShapeOwner2D, IStackable, IIdentifiable, ICloneable<TElementType>
+{
+    public MyLayoutCollection(int slotCount, int columnCount)
+        : base(slotCount)
     {
-        public MyLayoutCollection(int slotCount, int columnCount)
-            : base(slotCount)
-        {
 
-        }
     }
+}
 ```

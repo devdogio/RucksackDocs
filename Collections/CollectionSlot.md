@@ -1,22 +1,25 @@
 # CollectionSlot and LayoutCollectionSlot
 
-Collection slots are used inside collections. These slots are stored inside a collection, which in turn will contain the actual items in the collection. These slots are used to store all relevant data in one location. The items inside the collection will therefore never be modified by the collection.
+Collection slots are used inside collections. These slots are stored inside a collection, which in turn will contain the actual items in the collection. These slots are used to store all relevant data in one location.
 
 ## CollectionSlot
 
-The ICollectionSlot interface allows you to implement your own collection slots. By default the `CollectionSlot<T>` type is used.
+The `ICollectionSlot` interface allows you to implement your own collection slots. By default the `CollectionSlot<T>` type is used.
 
 ```csharp
-    public class MyCollectionSlot<T> : CollectionSlot<T>
-        where T : IEquatable<T>, IStackable
-    {
-        public override void Set(T item, int amount)
-        {
-            base.Set(item, amount);
+using System;
+using Devdog.InventoryPlus.Collections;
 
-            // Implement your own behavior here...
-        }
+public class MyCollectionSlot<T> : CollectionSlot<T>
+    where T : IEquatable<T>, IStackable
+{
+    public override void Set(T item, int amount)
+    {
+        base.Set(item, amount);
+
+        // Implement your own behavior here...
     }
+}
 ```
 
 ## LayoutCollectionSlot
@@ -24,16 +27,19 @@ The ICollectionSlot interface allows you to implement your own collection slots.
 The ILayoutCollectionSlot interface allows you to immplement your own layout collection slot. By defaul the `LayoutCollectionSlot<T>` is used.
 
 ```csharp
-    public class MyLayoutCollectionSlot<T> : LayoutCollectionSlot<T>
-        where T : IEquatable<T>, IStackable
-    {
-        public override void Set(T item, int amount)
-        {
-            base.Set(item, amount);
+using System;
+using Devdog.InventoryPlus.Collections;
 
-            // Implement your own behavior here...
-        }
+public class MyLayoutCollectionSlot<T> : LayoutCollectionSlot<T>
+    where T : IEquatable<T>, IStackable
+{
+    public override void Set(T item, int amount)
+    {
+        base.Set(item, amount);
+
+        // Implement your own behavior here...
     }
+}
 ```
 
 ## Using a custom slot in a collection

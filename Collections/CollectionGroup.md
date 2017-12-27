@@ -13,14 +13,17 @@ Each entry in a collection group can have a priority. Items will be added to the
 > Here we're giving col1 a priority of 60. This will place new items in col1. Once col1 is full, the items will be placed in col0.
 
 ```csharp
-	var col0 = new Collection<IItemInstance>(5) {name = "Collection0"};
-	var col1 = new Collection<IItemInstance>(5) {name = "Collection1"};
-	
-	var group = new CollectionGroup<IItemInstance>(new []
-	{
-		new CollectionGroup<IItemInstance>.Slot(col0), 
-		new CollectionGroup<IItemInstance>.Slot(col1, new CollectionPriority<IItemInstance>(60, 60, 60)), 
-	});
+using System;
+using Devdog.InventoryPlus.Collections;
+
+var col0 = new Collection<IItemInstance>(5) {name = "Collection0"};
+var col1 = new Collection<IItemInstance>(5) {name = "Collection1"};
+
+var group = new CollectionGroup<IItemInstance>(new []
+{
+	new CollectionGroup<IItemInstance>.Slot(col0), 
+	new CollectionGroup<IItemInstance>.Slot(col1, new CollectionPriority<IItemInstance>(60, 60, 60)), 
+});
 ```
 
 ## Collection restrictions

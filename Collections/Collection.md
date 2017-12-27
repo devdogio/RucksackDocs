@@ -136,31 +136,34 @@ collection.OnAddedItem += (sender, result) =>
 Collection restrictions allow you to restrict your collection when adding or removing items. For example, you may want to prevent the user from removing a quest item from the collection. By using the restrictions you can prevent the user from dropping, selling, or in any other way removing the item from the collection.
 
 ```csharp
-    public class MyRestriction<T> : ICollectionRestriction<T>
-        where T: IEquatable<T>
-    {
-        public Result<bool> CanAdd(T item)
-        {
-            return true;
-        }
+using System;
+using Devdog.InventoryPlus.Collections;
 
-        public Result<bool> CanRemove(T item)
-        {
-            // You can also return an Error here to make it clear why the action failed.
-            return false;
-        }
+public class MyRestriction<T> : ICollectionRestriction<T>
+    where T: IEquatable<T>
+{
+    public Result<bool> CanAdd(T item)
+    {
+        return true;
     }
+
+    public Result<bool> CanRemove(T item)
+    {
+        // You can also return an Error here to make it clear why the action failed.
+        return false;
+    }
+}
 ```
 
-To use the restriction in a collection it has to be added first.
+To activate the restriction on a collection it has to be added to the collection's restrictions first.
 
 ```csharp
-collection.restrictions.Add(new MyRestriction<ItemDefinition>());
+collection.restrictions.Add(new MyRestriction<IItemInstance>());
 ```
 
 ## Collection simulations
 
-Want to do some crazy things? Using a collection simulation you can test if certain actions will succeed. For example, you may want to add 2 items, remove 3, move something around, and then add some more. Rather than running a 100 tests to make sure the action is valid, you can simply simulate the action, see if it succeeds.
+Want to do some crazy things? Using a collection simulation you can test if certain actions will succeed. For example, you may want to add 2 items, remove 3, move something around, and then add some more. Rather than running a 100 tests to make sure the action is valid, you can simply simulate the action and see if it succeeds.
 
 ```csharp
 using (var sim = new CollectionSimulation<ItemDefinition>(collection))
@@ -183,6 +186,9 @@ After the using() block the sim.collection will be cleaned up by the garbage col
 Of course, you can also implement your own collection if you so desire. To do this you can inherit from `CollectionBase<TSlotType, TElementType>` or implement the `ICollection<T>` interface.
 
 ```csharp
+using System;
+using Devdog.InventoryPlus.Collections;
+
 public sealed class MyCollection<TElementType> : CollectionBase<ICollectionSlot<TElementType>, TElementType>
     where TElementType : IEquatable<TElementType>, IStackable, IIdentifiable, ICloneable<TElementType>
 {
