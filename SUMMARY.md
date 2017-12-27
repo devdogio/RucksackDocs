@@ -1,9 +1,9 @@
-- Examples
-- [General Examples](Examples/GeneralExamples.md)
-
 - FAQ & Common pitfalls
 - [FAQ](FAQ.md)
 - [Common Pitfalls](CommonPitfalls.md)
+
+- Examples
+- [General Examples](Examples/GeneralExamples.md)
 
 - Collections
 - [Collection](Collections/Collection.md)
@@ -19,7 +19,7 @@
 - [Currency Collection](Currencies/CurrencyCollection.md)
 - [Currency Collection Group](Currencies/CurrencyCollectionGroup.md)
 - [Conversions](Currencies/Conversions.md)
-  
+
 - Items
 - [Items](Items/Items.md)
 - [Custom Item](Items/CustomItem.md)
@@ -35,4 +35,4 @@
 
 - Editor
 - [Editor](Editor/Editors.md)
-- [Editor](Editor/CustomEditors.md)
+- [Custom editor](Editor/CustomEditors.md)

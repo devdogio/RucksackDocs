@@ -26,36 +26,36 @@ Because this data is in the item instance the data can manually be set per item 
 
 For example:
 ```csharp
-    [System.Serializable]
-    public class ItemInstance : IItemInstance, IEquatable<ItemInstance>
+[System.Serializable]
+public class ItemInstance : IItemInstance, IEquatable<ItemInstance>
+{
+    public Guid ID { get; }
+    public IItemDefinition itemDefinition { get; }
+    public int maxStackSize
     {
-        public Guid ID { get; }
-        public IItemDefinition itemDefinition { get; }
-        public int maxStackSize
-        {
-            get { return itemDefinition.maxStackSize; } 
-        }
-        
-        // Add stats to the run-time item.
-        public Stat[] stats = new Stat[0];
-        
-        // For (de)serialization...
-        private ItemInstance()
-        { }
-        
-        public ItemInstance(Guid ID, IItemDefinition itemDefinition)
-        {
-            if (itemDefinition == null)
-            {
-                throw new ArgumentException("Given ItemDefintiion is null!");
-            }
-            
-            this.ID = ID;
-            this.itemDefinition = itemDefinition;
-        }
-        
-        // ... Removed for clarity
+        get { return itemDefinition.maxStackSize; } 
     }
+    
+    // Add stats to the run-time item.
+    public Stat[] stats = new Stat[0];
+    
+    // For (de)serialization...
+    private ItemInstance()
+    { }
+    
+    public ItemInstance(Guid ID, IItemDefinition itemDefinition)
+    {
+        if (itemDefinition == null)
+        {
+            throw new ArgumentException("Given ItemDefintiion is null!");
+        }
+        
+        this.ID = ID;
+        this.itemDefinition = itemDefinition;
+    }
+    
+    // ... Removed for clarity
+}
 ```
 
 ## Item Definition
@@ -128,16 +128,16 @@ This is very simple and is handled by extension methods.
 > Always use the this.GetValue(o => o._property); selector to select your items to enable nesting.
 
 ```csharp
-    public partial class MyUnityItemDefinition : UnityItemDefinition
+public partial class MyUnityItemDefinition : UnityItemDefinition
+{
+    [SerializeField]
+    private int _damage;
+    public int damage
     {
-        [SerializeField]
-        private int _damage;
-        public int damage
-        {
-            get { return this.GetValue(t => t._damage); }
-            set { _name = value; }
-        }
+        get { return this.GetValue(t => t._damage); }
+        set { _name = value; }
     }
+}
 ```
 
 Also see [Creating Custom Items](CustomItem.md)
