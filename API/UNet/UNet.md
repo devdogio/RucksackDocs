@@ -4,7 +4,7 @@ UNet multiplayer support is built-in, and can be used with minimal setup.
 
 ## Server authority
 
-
+The server is authorative, meaning that the server decides everything for the player. The player can request certain actions from the server (such as using an item), however, the server will always validate and decide if the action is permitted. This prevents cheating, but does add a roundtrip to the server for each networked action.
 
 ## UNetActionsBridge
 
@@ -37,6 +37,8 @@ UNetPermissionsRegistry.collections.SetPermission(collection, player.identity, R
 For simplicity there's built-in methods on the UNetActionsBridge that allow you to create collections easily on both the server and client with a single call.
 
 ```csharp
+using Devdog.InventoryPlus;
+
 var player = <ASSIGN PLAYER>;
 var bridge = player.GetComponent<UNetActionsBridge>();
 
@@ -54,7 +56,7 @@ bridge.Server_AddCollectionToServerAndClient(new AddCollectionMessage(){
 
 // Don't forget to set the permission for this player.
 // This will set the permission on the server and notify the client it received read permission on this collection.
-// NOTE that the collection has to exist before setting permissions.
+// NOTE that the collection has to exist before setting permission.
 bridge.Server_SetCollectionPermissionOnServerAndClient(new SetCollectionPermissionMessage(){
 	collectionGuid = collectionGuid,
 	permission = ReadWritePermissin.Read
@@ -73,13 +75,24 @@ Regitries are used to index certain types. These are useful for the server to qu
 
 ## Run-time items
 
-
+Items can be created / generated at run-time. Item instances can contain run-time information, while the item definitions are persistent objects.
 
 ### How run-time items are created
 
-### Registry
+Item instances have to be registered on the client. This can be done through the `UNetActionsBridge`. Note that items are also auto. registered on the client through collection replication.
 
-### Client registration
+> Registering items on clients manually is only needed if you want to pre-load it, the item is not in a collection, or need the item before it's replciated through a collection.
+
+```csharp
+using Devdog.InventoryPlus;
+
+var player = <ASSIGN PLAYER>;
+var bridge = player.GetComponent<UNetActionsBridge>();
+
+// Tell this client to register the item instance on their local client.
+bridge.Server_TellClientToRegisterItemInstance(itemInstance);
+```
 
 ### Network serialization
 
+TODO

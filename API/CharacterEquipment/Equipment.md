@@ -24,3 +24,5 @@ The `UnityEquippableCharacter` is the built-in equippable character class for eq
 ## IEquippableCharacter<T>
 
 The `IEquippableCharacter<T>` interface can be used to define an equippable character. This can be your main player, an NPC, or even a spaceship. The built-in `UnityEquippableCharacter` can be used in most cases.
+
+Also see [Custom equippable character](EquippableCharacter.md)

@@ -18,6 +18,28 @@ var collection = builder.SetLogger(logger)
 
 Here we're creating a collection of type IItemInstance. This means the collection can only store IItemInstance objects, or anything that inherits from IItemInstance.
 
+## Registries
+
+Collections have to be indexed in collection registries so it can be looked up at a later time.
+
+It is recommended to register the collection by name and GUID. The name defines it's UI binding, while the ID defines it's unique instance (ID should always be unique per collection).
+
+```csharp
+using Devdog.InventoryPlus.Collections;
+
+// Registering an item
+CollectionRegistry.byID.Register(collectionGuid, collection);
+CollectionRegistry.byName.Register(collectionName, collection);
+
+// Un-Registering an item
+CollectionRegistry.byID.UnRegister(collectionGuid, collection);
+CollectionRegistry.byName.UnRegister(collectionName, collection);
+
+// Getting an item from the registry
+var collectionByID = CollectionRegistry.byID.Get(collectionGuid);
+var collectionByName = CollectionRegistry.byName.Get(collectionName);
+```
+
 ## Item Equality
 
 In the example below 2 items that have the same item definition are considered equal, and can therefore be stacked. When calling a method like `GetAmount(myItem);` this will return the total amount of items equatable to "myItem".

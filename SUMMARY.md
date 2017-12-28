@@ -1,38 +1,46 @@
-- FAQ & Common pitfalls
-- [FAQ](FAQ.md)
-- [Common Pitfalls](CommonPitfalls.md)
+- Docs
+  - FAQ & Common pitfalls
+  - [FAQ](Docs/FAQ.md)
+  - [Common Pitfalls](Docs/CommonPitfalls.md)
 
-- Examples
-- [General Examples](Examples/GeneralExamples.md)
+  - Examples
+  - [General Examples](Docs/Examples/GeneralExamples.md)
 
-- Collections
-- [Collection](Collections/Collection.md)
-- [Collection groups](Collections/CollectionGroup.md)
-- [Collection slot](Collections/CollectionSlot.md)
-- [Layout collections](Collections/LayoutCollection.md)
+  - Editor
+  - [Editor](Docs/Editor/Editors.md)
 
-- Character Equipment
-- [Equipment](CharacterEquipment/Equipment.md)
+- API
+  - Collections
+  - [Collection](API/Collections/Collection.md)
+  - [Collection groups](API/Collections/CollectionGroup.md)
+  - [Collection slot](API/Collections/CollectionSlot.md)
+  - [Layout collections](API/Collections/LayoutCollection.md)
 
-- Currencies
-- [Currency](Currencies/Currency.md)
-- [Currency Collection](Currencies/CurrencyCollection.md)
-- [Currency Collection Group](Currencies/CurrencyCollectionGroup.md)
-- [Conversions](Currencies/Conversions.md)
+  - Character Equipment
+  - [Equipment](API/CharacterEquipment/Equipment.md)
+  - [Equippable Character](API/CharacterEquipment/EquippableCharacter.md)
 
-- Items
-- [Items](Items/Items.md)
-- [Custom Item](Items/CustomItem.md)
+  - Currencies
+  - [Currency](API/Currencies/Currency.md)
+  - [Currency Collection](API/Currencies/CurrencyCollection.md)
+  - [Currency Collection Group](API/Currencies/CurrencyCollectionGroup.md)
+  - [Conversions](API/Currencies/Conversions.md)
 
-- UNet
-- [UNet](UNet/UNet.md)
+  - Items
+  - [Items](API/Items/Items.md)
+  - [Custom Item](API/Items/CustomItem.md)
 
-- Databases
-- [Database](Database/Database.md)
+  - Vendors
+  - [Vendors](API/Vendors/Vendors.md)
 
-- Serialization
-- [Serialization](Serialization/Serialization.md)
+  - UNet
+  - [UNet](API/UNet/UNet.md)
 
-- Editor
-- [Editor](Editor/Editors.md)
-- [Custom editor](Editor/CustomEditors.md)
+  - Databases
+  - [Database](API/Database/Database.md)
+
+  - Serialization
+  - [Serialization](API/Serialization/Serialization.md)
+
+  - Editor
+  - [Custom editor](API/Editor/CustomEditors.md)

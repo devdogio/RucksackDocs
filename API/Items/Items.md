@@ -1,49 +1,63 @@
 # Items
 
 ## Item Registry
-The ```ItemRegistry``` is responsible for keeping track of all run-time items.
-Keep in mind that if you're going to create a new item instance you'll have to register
-it with the item registry. 
 
-> All built-in factories and utility classes will handle the registration for you.
+The `ItemRegistry` is responsible for keeping track of all run-time items.
+Keep in mind that if you're going to create a new item instance you'll have to register it with the item registry.
+
+```csharp
+// Registering an item in the registry.
+ItemRegistry.Register(itemGuid, item);
+
+// Un-Registering an item from the registry.
+ItemRegistry.UnRegister(itemGuid);
+
+// Getting an item from the registry
+var item = ItemRegistry.Get(itemGuid);
+```
+
+### Networking
+
+Networked registry's (for example: for UNet) are prefixed with Server*. The Server* registries should only contain server collections.
 
 ## Item Instance
 
-#### Item instances are run-time items that are based on an [item definition](#item-definition).
-Item instances are run-time objects that can be created through code. These items are always
-based on an item definition, which is a persistent data structure that contains all
-basic information about the item. Because item definitions are persistent their information
-should not change at run-time. 
+### Item instances are run-time items that are based on an [item definition](#item-definition).
 
-##### Each item instance has a globally unique ID (GUID)
+Item instances are run-time objects that can be created through code. These items are always based on an item definition, which is a persistent data structure that contains all basic information about the item. Because item definitions are persistent their information should not change at run-time.
+
+#### Each item instance has a globally unique ID (GUID)
+
 When creating a new item instance you'll have to assign an unique GUID. These GUID's are
 used for registry indexing, network transmission / ownership and serialization.
 You can create a new System.Guid instance through ```System.Guid.NewGuid();```.
 
-##### Item instances should contain run-time info; Item definition should contain static information.
+#### Item instances should contain run-time info; Item definition should contain static information.
+
 In the example below we add stats to the item instance.
 Because this data is in the item instance the data can manually be set per item instance.
 
 For example:
+
 ```csharp
 [System.Serializable]
-public class ItemInstance : IItemInstance, IEquatable<ItemInstance>
+public class MyItemInstance : IUnityItemInstance, IEquatable<IUnityItemInstance>
 {
     public Guid ID { get; }
     public IItemDefinition itemDefinition { get; }
     public int maxStackSize
     {
-        get { return itemDefinition.maxStackSize; } 
+        get { return itemDefinition.maxStackSize; }
     }
     
     // Add stats to the run-time item.
     public Stat[] stats = new Stat[0];
     
     // For (de)serialization...
-    private ItemInstance()
+    private MyItemInstance()
     { }
     
-    public ItemInstance(Guid ID, IItemDefinition itemDefinition)
+    public MyItemInstance(Guid ID, IItemDefinition itemDefinition)
     {
         if (itemDefinition == null)
         {
@@ -64,6 +78,7 @@ public class ItemInstance : IItemInstance, IEquatable<ItemInstance>
 make sure to persistently store all item defintions if you're using multiplayer.
 
 ### Nesting item definitions
+
 Sometimes you may want to create a variation of an existing item. This can be done through
 nesting item definitions.
 
@@ -137,6 +152,30 @@ public partial class MyUnityItemDefinition : UnityItemDefinition
         get { return this.GetValue(t => t._damage); }
         set { _name = value; }
     }
+}
+```
+
+### Item Equality
+
+In the example below 2 items that have the same item definition are considered equal, and can therefore be stacked in collections. When calling a method like `GetAmount(myItem);` this will return the total amount of items equatable to "myItem".
+
+```csharp
+public class UnityItemInstance : IUnityItemInstance, IEquatable<UnityItemInstance>
+{
+	public bool Equals(IUnityItemInstance other)
+	{
+		return Equals((IItemInstance) other);
+	}
+
+	public bool Equals(UnityItemInstance other)
+	{
+		return Equals((IItemInstance) other);
+	}
+
+	public virtual bool Equals(IItemInstance other)
+	{
+		return itemDefinition.Equals(other?.itemDefinition);
+	}
 }
 ```
 
