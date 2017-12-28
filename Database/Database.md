@@ -2,6 +2,10 @@
 
 Databases can be used to retrieve data from a specific source. This database can load data on your local computer, from the cloud, etc. The database has sync and async methods to retrieve and set data.
 
+## UnityDatabase<T>
+
+By default the `UnityDatabase<T>` is used to store data. The `UnityDatabase<T>` is a scriptable object that stores a simple flat array of items. If you want better lookup times, or to fetch data from an online source you can implement a custom database.
+
 ## Implementing a custom database
 
 Below you'll find a Mongo database example.

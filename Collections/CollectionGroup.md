@@ -21,8 +21,8 @@ var col1 = new Collection<IItemInstance>(5) {name = "Collection1"};
 
 var group = new CollectionGroup<IItemInstance>(new []
 {
-	new CollectionGroup<IItemInstance>.Slot(col0), 
-	new CollectionGroup<IItemInstance>.Slot(col1, new CollectionPriority<IItemInstance>(60, 60, 60)), 
+	new CollectionGroup<IItemInstance>.Slot(col0),
+	new CollectionGroup<IItemInstance>.Slot(col1, new CollectionPriority<IItemInstance>(60, 60, 60)),
 });
 ```
 
