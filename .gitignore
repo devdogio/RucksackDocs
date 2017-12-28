@@ -1,6 +1,7 @@
 
 Docs\.csproj
 _site/
+log.txt
 
 bin/
 obj/

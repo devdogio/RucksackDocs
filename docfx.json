@@ -12,7 +12,8 @@
             "**/bin/**",
             "_site/**",
             "**/Docs/**",
-            "**/APIDocs/**"
+            "**/APIDocs/**",
+            "**/Tests/**"
           ],
           "src": "../"
         }
@@ -43,7 +44,8 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "**/Assets/**"
         ],
         "exclude": [
           "obj/**",
