@@ -24,7 +24,7 @@ public class MyCollectionSlot<T> : CollectionSlot<T>
 
 ## LayoutCollectionSlot
 
-The ILayoutCollectionSlot interface allows you to immplement your own layout collection slot. By defaul the `LayoutCollectionSlot<T>` is used.
+The ILayoutCollectionSlot interface allows you to implement your own layout collection slot. By default the `LayoutCollectionSlot<T>` is used.
 
 ```csharp
 using System;
@@ -44,11 +44,11 @@ public class MyLayoutCollectionSlot<T> : LayoutCollectionSlot<T>
 
 ## Using a custom slot in a collection
 
-To use your new [Collection](Collection.md) slot on any collection we'll have to tell the collection to generate new slots with our new type. 
+To use your new [Collection](Collection.md) slot on any collection we'll have to tell the collection to generate new slots with our new type.
 
 > Note that generating new slots will wipe all data from the collection.
 
-> Note that [Layout Collections](LayoutCollection.md) requre the slot to implement the `ILayoutCollectionSlot<T>` interface instead of `ICollectionSlot<T>`.
+> Note that [Layout Collections](LayoutCollection.md) require the slot to implement the `ILayoutCollectionSlot<T>` interface instead of `ICollectionSlot<T>`.
 
 ```csharp
 var collection = new Collection<ItemDefinition>(10);

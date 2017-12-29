@@ -1,6 +1,6 @@
 # Layout collections
 
-Layout collections allow items to be stored that take up more than 1x1 slots. Items could for example take up 3 horizontal slots and 2 vertical slots, totalling at 6 occupied slots. 
+Layout collections allow items to be stored that take up more than 1x1 slots. Items could for example take up 3 horizontal slots and 2 vertical slots, totalling at 6 occupied slots.
 
 Layout collection items have to implement the `IShapeOwner2D` interface to pass 'shape' of the item through to the collection. You can additionally implement your own `IShape` interface to define the shape of the item.
 
