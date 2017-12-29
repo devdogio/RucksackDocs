@@ -72,6 +72,26 @@ public class MyItemInstance : IUnityItemInstance, IEquatable<IUnityItemInstance>
 }
 ```
 
+## Using the item instance
+
+Using the item instance is simple; Simply pass in the character using the item and the `ItemContext`.
+
+```csharp
+using System;
+using Devdog.General;
+using Devdog.InventoryPlus.Items;
+
+
+var player = PlayerManager.instance.currentPlayer;
+var itemContext = new ItemContext()
+{
+	// Completely optional you can define if you want to use more than 1.
+	useAmount = 2
+};
+
+var useResult = myItem.Use(player, itemContext);
+```
+
 ## Item Definition
 
 > Item Definitions only transfer their GUID over the network, therefore,
