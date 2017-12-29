@@ -1,8 +1,9 @@
-
 - name: Docs
   href: Docs/
-- name: API
-  href: Api/
+  topicHref: Docs/Index.md
+- name: API Docs
+  href: APIDocs/
+  topicHref: APIDocs/Index.md
 - name: Script reference
-  href: obj/api/
-  homepage: ScriptReference/index.md
+  href: API/
+  topicHref: API/Index.md

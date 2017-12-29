@@ -44,7 +44,6 @@
     "resource": [
       {
         "files": [
-          "images/**",
           "**/Assets/**"
         ],
         "exclude": [
@@ -56,7 +55,7 @@
     "overwrite": [
       {
         "files": [
-          "apidoc/**.md"
+          "API/**.md"
         ],
         "exclude": [
           "obj/**",
@@ -64,9 +63,43 @@
         ]
       }
     ],
+    "postProcessors": [ "ExtractSearchIndex" ],
+    "globalMetadata": {
+      "_appTitle": "Devdog.io asset documentation",
+      "_appFooter": "",
+      "_enableSearch": true,
+      "_disableContribution": true
+    },
+    "fileMetadata": {
+      "priority": {
+        "obj/docfx/**": 1.0,
+        "**.md": 2.5,
+        "APIDocs/**.md": 2.5,
+        "Docs/**.md": 2.5,
+        "API/**.md": 2
+      },
+      "keywords": {
+        "obj/docfx/**": [ "API", "Reference" ],
+        "APIDocs/**.md": [ "API", "API Documentation", "Documentation" ],
+        "Docs/**.md": [ "Documentation", "Tutorials", "Guides" ],
+        "API/**.md": [ "API", "Script Reference", "Documentation" ]
+      }
+    },
+    "sitemap":{
+      "baseUrl": "https://devdog.io",
+      "priority": 0.1,
+      "changefreq": "monthly",
+      "fileOptions":{
+        "**/API/**.yml": {
+          "priority": 0.3,
+          "lastmod": "2001-01-01"
+        }
+      }
+    },
     "dest": "_site",
     "template": [
-      "default"
+      "default",
+      "Template"
     ]
   }
 }
