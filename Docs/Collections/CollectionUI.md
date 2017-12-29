@@ -1,6 +1,6 @@
 # Collection UI
 
-Using the `ItemCollectionUI` an item collection UI can be defined.
+Using the `ItemCollectionUI` a UI (uGUI) can be defined for a collection.
 
 ![](Assets/ItemCollectionUI.png)
 
@@ -12,7 +12,9 @@ Using the `ItemCollectionUI` an item collection UI can be defined.
 
 ## Collection Creator
 
-The collection name set in the `ItemCollectionUI` component has to match the name set in the `ItemCollectionCreator` component.
+The collection creator component can create a new collection. 
+
+> The collection name set in the `ItemCollectionUI` component has to match the name set in the `ItemCollectionCreator` component.
 
 ![](Assets/CollectionCreator.png)
 
@@ -26,7 +28,7 @@ The collection name set in the `ItemCollectionUI` component has to match the nam
 
 ![](Assets/ItemCollectionUIStep2.png)
 
-3. Set UI Prefab
+3. Set UI Prefab. This should be a prefab that has the `ItemCollectionSlotUI` component, or a component inheriting from `CollectionSlotUIBase<IItemInstance>`.
 
 ![](Assets/ItemCollectionUIStep3.png)
 
