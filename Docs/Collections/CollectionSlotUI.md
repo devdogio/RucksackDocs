@@ -2,6 +2,8 @@
 
 Inside a collection UI slots are used. A slot represents a single item in the collection and displays all information about the item.
 
+> You can create any design you like, so long the UI references are assigned in the ItemCollectionSlotUI component.
+
 ![](Assets/ItemCollectionSlotUI.png)
 
 ## Input handlers
@@ -10,9 +12,7 @@ Input handlers, as the name describes, handle the input of a collection slot. Th
 
 A collection slot requires an input handler so that the user can interact with it. If you want to create a read-only collection the user can not interact with, removing all the input handlers is an easy and simple way to do this.
 
-<aside class="notice">
-Note that ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
-</aside>
+> Note that ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
 
 ![](Assets/ItemCollectionSlotUIInputHandler.png)
 
@@ -37,3 +37,26 @@ For example: The `ItemCollectionSlotUIWorldModel` component shows a 3D model of 
 
 ## Walk through
 
+1. Create a new empty object in your canvas.
+2. Attach the `ItemCollectionSlotUI` component.
+
+![](Assets/ItemCollectionSlotUIStep1.png)
+
+3. Create and assign UI elements for repainting.
+
+I've put the Image component (icon) on the "MySlotUI" object itself. This way the icon will be the Raycast target and all child items will have the raycast target flag unchecked. For performance reasons you want to have as little raycast targets as possible.
+
+![](Assets/ItemCollectionSlotUIStep2.png)
+
+4. Add input handlers
+
+![](Assets/ItemCollectionSlotUIInputHandler.png)
+![](Assets/ItemCollectionSlotUIDragHandler.png)
+
+5. Drag the UI element to your project folder to create a prefab out of it.
+
+![](Assets/ItemCollectionSlotUIStep3.png)
+
+6. Assign the new UI prefab to your `ItemCollectionUI` component to render your item collection with the new UI prefab.
+
+![](Assets/ItemCollectionSlotUIStep4.png)
