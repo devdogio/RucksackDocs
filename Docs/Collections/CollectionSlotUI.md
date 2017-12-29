@@ -2,7 +2,7 @@
 
 Inside a collection UI slots are used. A slot represents a single item in the collection and displays all information about the item.
 
-![](ItemCollectionSlotUI.png)
+![](Assets/ItemCollectionSlotUI.png)
 
 ## Input handlers
 
@@ -10,7 +10,9 @@ Input handlers, as the name describes, handle the input of a collection slot. Th
 
 A collection slot requires an input handler so that the user can interact with it. If you want to create a read-only collection the user can not interact with, removing all the input handlers is an easy and simple way to do this.
 
-> Note that ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
+<aside class="notice">
+Note that ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
+</aside>
 
 ![](Assets/ItemCollectionSlotUIInputHandler.png)
 
