@@ -14,10 +14,14 @@ Input handlers are responsible for handling the input to use / un-use the trigge
 
 The `ITriggerInputHandler` interface can be implemented into a custom component to handle the input for the trigger.
 
-> Note that you can also inherit from `TriggerInputHandlerBase`, which contains some helper methods.
+> Note that you can also inherit from `TriggerInputHandlerBase`, which contains some helper methods. Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
+
+Attach the following script to your trigger to handle it's input. You can also select it through the editor.
 
 ```csharp
-public class TriggerInputHandler : TriggerInputHandlerBase
+using Devdog.General;
+
+public class MyTriggerInputHandler : TriggerInputHandlerBase
 {
 	public override TriggerActionInfo actionInfo
 	{
@@ -77,4 +81,25 @@ When you're building a 2D game, and wish to use the built-in range handler, you 
 
 ## Trigger callbacks
 
-todo...
+The `ITriggerCallbacks` interface defines a component that can receive callbacks when the trigger is used or un-used.
+
+Attach the script to your trigger so it will receive callbacks.
+
+> Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
+
+```csharp
+using Devdog.General;
+
+public sealed class MyTriggerCallbacks : MonoBehaviour, ITriggerCallbacks
+{
+	public void OnTriggerUsed(Character character, TriggerEventData eventData)
+	{
+		// Do something here, like playing an animation on your character.
+	}
+
+	public void OnTriggerUnUsed(Character character, TriggerEventData eventData)
+	{
+		// Do something here...
+	}
+}
+```
