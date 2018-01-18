@@ -104,6 +104,7 @@ public class MyItemDefinition : UnityItemDefinition
 
 ## Example item stats
 
+todo...
 
 ```csharp
 
