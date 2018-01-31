@@ -11,6 +11,7 @@ Of course, vendors aren't restricted to just buying/selling items. Vendors can b
 Vendors have to be indexed in vendor registries so it can be looked up at a later time.
 
 ```csharp
+using System;
 using Devdog.InventoryPlus.Vendors;
 
 // Registering a vendor
@@ -31,6 +32,12 @@ The item vendor keeps track of products. These products contain the actual item 
 For example: You may want to give certain players a discount, while making others pay more.
 
 ```csharp
+using System;
+using Devdog.General;
+using Devdog.InventoryPlus.Items;
+using Devdog.InventoryPlus.Collections;
+using UnityEngine;
+
 // Creating a product is simple.
 private static VendorProduct<IItemInstance> ToProduct(CollectionItemInstance item)
 {
