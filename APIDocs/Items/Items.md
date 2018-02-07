@@ -16,15 +16,43 @@ ItemRegistry.UnRegister(itemGuid);
 var item = ItemRegistry.Get(itemGuid);
 ```
 
+## Item Factory
+
+The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
+
+> Note that for each custom item definition type you have to register a binding with an instance type in the item factory.
+
+```csharp
+// Create a binding between the UnityItemDefinition and the UnityItemInstance.
+// When you're trying to create a new instance of UnityItemDefinition this will ensure a new instance of UnityItemInstance will be returned.
+ItemFactory.Bind<UnityItemDefinition, UnityItemInstance>();
+
+// Creates a new instance for the given itemDefinition. Based on the itemDefinition type and the set bindings a new instance will be returned.
+var inst = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid());
+```
+
 ### Networking
 
 Networked registry's (for example: for UNet) are prefixed with Server*. The Server* registries should only contain server collections.
 
 ## Item Instance
 
-### Item instances are run-time items that are based on an [item definition](#item-definition).
+### Item instances are run-time items that are based on an [item definition](#item-definition)
 
 Item instances are run-time objects that can be created through code. These items are always based on an item definition, which is a persistent data structure that contains all basic information about the item. Because item definitions are persistent their information should not change at run-time.
+
+> Item instances need to have a constructor that takes a IItemDefinition (or derived type) and System.Guid argument.
+
+```csharp
+// An example of a constructor for an item instance type.
+// Note that you can make the constructor protected or private to avoid users from directly instantiating the item without going through the ItemFactory.
+protected MyItemInstanceType(System.Guid guid, IItemDefinition itemDefinition)
+{
+    this.ID = guid;
+    this.itemDefinition = itemDefinition;
+}
+
+```
 
 #### Each item instance has a globally unique ID (GUID)
 
