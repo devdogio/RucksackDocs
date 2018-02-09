@@ -17,7 +17,8 @@ The UNetActionsBridge is the enter and exit point for all player actions.
 - TargetRpc_* Methods can only be invoked on the server and relay their message to the client.
 - Cmd_* Methods can only be invoked on the client and relay their message to the server.
 
-> Note that the client requires authority over the object to call Cmd_* methods. (see NetworkIdentity)
+> **[warning] Warning**
+> The client requires authority over the object to call Cmd_* methods. (see NetworkIdentity).
 
 ## Permission system
 

@@ -1,0 +1,14 @@
+{
+	"root": "./",
+	"structure": {
+		"readme": "README.md",
+		"summary": "SUMMARY.md"
+	},
+	"plugins": ["devdog-theme", "alerts", "github-edit"],
+	"pluginsConfig": {
+		"github-edit": {
+			"repo": "devdogio/InventoryPlusDocs",
+			"branch": "master"
+		}
+	}
+}
