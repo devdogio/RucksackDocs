@@ -53,6 +53,6 @@
 
 * [Serialization](API/Serialization/Serialization.md)
 
-## Editor
+## API Editor
 
 * [Custom editor](API/Editor/CustomEditors.md)
