@@ -6,6 +6,18 @@ A Collection slot ui is a representation of a single item in a collection. Slots
 
 The `CollectionSlotUIBase<T>` is a base class with some simple helper methods. Your class has to inherit from `CollectionSlotUIBase<T>` to be used with built-in collection UI types.
 
+## Invocation order
+
+Input handlers will be invoked in the order they're placed on the slot object. In other words, from top to bottom.
+
+![](Assets/InvocationOrder.png)
+
+## Event consumption
+
+In case an input module consumes the PointerEventData it will not propagate to the input module below it.
+
+For example, if the `Item Collection Sell To Vendor Input Handler` consumes the event the modules below it will never receive an OnPointerClick callback.
+
 ## Callback receivers
 
 Any component on the slot object that implements the `ICollectionSlotUICallbackReceiver<T>` interface will receive a callback when the slot changes. Using this you can repaint UI elements without having to fully implement your own slot type.

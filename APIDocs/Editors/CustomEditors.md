@@ -1,6 +1,6 @@
 # Custom editors
 
-The built-in editors can be extended or even overwritten to fit your need. This can be espcially useful when creating addons.
+The built-in editors can be extended or even overwritten to fit your need. This can be especially useful when creating addons.
 
 ## Extending existing editor page
 
@@ -63,12 +63,12 @@ public class ItemEditor : InventoryEditorCrudBase<UnityItemDefinition>
 
 ## Adding an editor page
 
-Pages can be created by adding a single ```[EditorPage("Items/TabName")]``` attribute to your class.
+Pages can be created by adding a single `[EditorPage("Items/TabName")]` attribute to your class.
 
 > Note that your class has to inherit from `EditorCrudBase<T>` or anything that inherits from it like `InventoryEditorCrudBase<T>`.
 
 ## Overwriting an editor page
 
-In case you want to completely replace an existing editor page you can add a higher priority to your ```[EditorPage("Items/TabName", order: 20, priority: 100)]``` attribute.
+In case you want to completely replace an existing editor page you can add a higher priority to your `[EditorPage("Items/TabName", order: 20, priority: 100)]` attribute.
 
 > Note that this will completely overwrite any existing tabs.

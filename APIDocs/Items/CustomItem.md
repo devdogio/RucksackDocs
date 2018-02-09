@@ -4,7 +4,7 @@ See [Items](Items.md) for a detailed description about item instances and item d
 
 ## Item Registry
 
-The `ItemRegistry` is responsible for keeping track of all run-time items.
+The `ItemRegistry` is responsible for keeping track of all item instances.
 Keep in mind that if you're going to create a new item instance you'll have to register it with the item registry.
 
 ```csharp
@@ -21,6 +21,13 @@ var item = ItemRegistry.Get(itemGuid);
 ## Item Instance
 
 ```csharp
+using System;
+using Devdog.General;
+using Devdog.InventoryPlus.Items;
+using Devdog.InventoryPlus.Characters;
+using Devdog.InventoryPlus.Collections;
+using UnityEngine;
+
 [System.Serializable]
 public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 {
@@ -32,7 +39,7 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
     }
     
     // For (de)serialization...
-    private MyItemInstance()
+    protected MyItemInstance()
     { }
     
     public MyItemInstance(Guid ID, IItemDefinition itemDefinition)
@@ -102,10 +109,17 @@ public class MyItemDefinition : UnityItemDefinition
 }
 ```
 
-## Example item stats
+## Item Factory binding
 
-todo...
+The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
+
+> Note that for each custom item definition type you have to register a binding with an instance type in the item factory.
 
 ```csharp
+// Create a binding between the UnityItemDefinition and the UnityItemInstance.
+// When you're trying to create a new instance of UnityItemDefinition this will ensure a new instance of UnityItemInstance will be returned.
+ItemFactory.Bind<UnityItemDefinition, UnityItemInstance>();
 
+// Creates a new instance for the given itemDefinition. Based on the itemDefinition type and the set bindings a new instance will be returned.
+var inst = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid());
 ```

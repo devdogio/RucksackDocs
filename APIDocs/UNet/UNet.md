@@ -4,7 +4,7 @@ UNet multiplayer support is built-in, and can be used with minimal setup.
 
 ## Server authority
 
-The server is authorative, meaning that the server decides everything for the player. The player can request certain actions from the server (such as using an item), however, the server will always validate and decide if the action is permitted. This prevents cheating, but does add a roundtrip to the server for each networked action.
+The server is authoritative, meaning that the server decides everything for the player. The player can request certain actions from the server (such as using an item), however, the server will always validate and decide if the action is permitted. This prevents cheating, but does add a roundtrip to the server for each networked action.
 
 ## UNetActionsBridge
 
@@ -21,7 +21,7 @@ The UNetActionsBridge is the enter and exit point for all player actions.
 
 ## Permission system
 
-Collections and objects in the world can have permissions assigned to them in the `UNetPermissionsRegistry`. By default the user has no permission to any object or collection; All permission has to be set explicity.
+Collections and objects in the world can have permissions assigned to them in the `UNetPermissionsRegistry`. By default the user has no permission to any object or collection; All permission have to be set explicitly.
 
 ```csharp
 var player = <ASSIGN YOUR PLAYER>;
@@ -59,7 +59,7 @@ bridge.Server_AddCollectionToServerAndClient(new AddCollectionMessage(){
 // NOTE that the collection has to exist before setting permission.
 bridge.Server_SetCollectionPermissionOnServerAndClient(new SetCollectionPermissionMessage(){
 	collectionGuid = collectionGuid,
-	permission = ReadWritePermissin.Read
+	permission = ReadWritePermission.Read
 });
 ```
 
@@ -71,7 +71,7 @@ The validators make sure the GUID data is a consistent byte length, that indices
 
 ## Registries
 
-Regitries are used to index certain types. These are useful for the server to quickly find types it needs at an O(1) lookup speed. It's important to register your run-time types, otherwise the server won't be able to properly replicate actions.
+Registries are used to index certain types. These are useful for the server to quickly find types it needs at an O(1) lookup speed. It's important to register your run-time types, otherwise the server won't be able to properly replicate actions.
 
 ## Run-time items
 
