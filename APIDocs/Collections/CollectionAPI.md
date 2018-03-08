@@ -141,7 +141,7 @@ var added = collection.Add(myItem);
 // added.result
 ```
 
-When our item is successfully added to the collection we can find information about the placement in the added.result variable. If the placement, however, wen't wrong for whatever reason, we'll get an error objects back in the added.error variable.
+When our item is successfully added to the collection we can find information about the placement in the added.result variable. If the placement, however, went wrong for whatever reason, we'll get an error objects back in the added.error variable.
 
 ### Error objects
 
@@ -213,7 +213,7 @@ using (var sim = new CollectionSimulation<ItemDefinition>(collection))
 
     if(addResult.error != null || removeResult.error != null)
     {
-        // Whoops, something wen't wrong.
+        // Whoops, something went wrong.
     }
 }
 ```

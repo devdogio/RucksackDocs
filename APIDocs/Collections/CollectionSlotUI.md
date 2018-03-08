@@ -8,19 +8,22 @@ The `CollectionSlotUIBase<T>` is a base class with some simple helper methods. Y
 
 ## Invocation order
 
-Input handlers will be invoked in the order they're placed on the slot object. In other words, from top to bottom.
+Input handlers and UI callback receivers will be invoked in the order they're placed on the object. In other words: from top to bottom.
 
-![](Assets/InvocationOrder.png)
+![InvocationOrder](Assets/InvocationOrder.png)
 
 ## Event consumption
 
 In case an input module consumes the PointerEventData it will not propagate to the input module below it.
 
-For example, if the `Item Collection Sell To Vendor Input Handler` consumes the event the modules below it will never receive an OnPointerClick callback.
+An example of event propagation:
+![EventPropagation](Assets/EventPropagation.png)
 
-## Callback receivers
+## Repaint callback receivers
 
 Any component on the slot object that implements the `ICollectionSlotUICallbackReceiver<T>` interface will receive a callback when the slot changes. Using this you can repaint UI elements without having to fully implement your own slot type.
+
+> Note that the type of <T> has to be the same as the collection's <T>. For example: `Collection<IItemInstance>` requires callback receivers of type `ICollectionSlotUICallbackReceiver<IItemInstance>`
 
 For example: The `ItemCollectionSlotUIWorldModel` component shows a 3D model of the item inside the UI. This is done through a callback, making it an optional addition to your slot UI components.
 
@@ -41,7 +44,7 @@ public sealed class MyCollectionSlotUICallbackReceiver : MonoBehaviour, ICollect
 	public void Repaint(IItemInstance item, int amount)
 	{
 		// Display some image when this slot is not empty.
-		_newItemIcon.gameObject.SetActive(item != null);
+		_additionalImage.gameObject.SetActive(item != null);
 	}
 }
 ```
@@ -49,8 +52,6 @@ public sealed class MyCollectionSlotUICallbackReceiver : MonoBehaviour, ICollect
 ## Input handlers
 
 Event handlers handle the input of a single slot.
-
-> Consuming an event (eventData.Use()) prevents it from propagating to other components below the one that consumes it. In other words, other input handlers will not receive the event once it's been consumed (eventData.Use()).
 
 ```csharp
 using Devdog.General;

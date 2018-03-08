@@ -29,3 +29,7 @@ Using the `ItemCollectionCreator` or the `UNetItemCollectionCreator` for UNet yo
 ## Collection slots
 
 The `CollectionBase<TSlotType, TElementType>` uses a [CollectionSlot](CollectionSlot.md) to store it's items and additional information into. This is done to make sure that all data relevant to the item is stored in the slot, and not on the item. Items are therefore never modified by the collection.
+
+## Collection UI and input handling
+
+The `ICollectionSlotUICallbackReceiver<T>` (UI) and `ICollectionSlotInputHandler<T>` (Input handling) can be implemented into custom components to extend existing collection components. When using these interfaces you don't need to modify or replace any existing components. See [Collection Slot UI](CollectionSlotUI.md)

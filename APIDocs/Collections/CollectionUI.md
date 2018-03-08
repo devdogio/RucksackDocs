@@ -14,7 +14,7 @@ Slots represent a single item and all of it's information in the collection. See
 
 ### UIQueuedMonoBehaviour<T>
 
-The `UIQueuedMonoBehaviour<T>` is a base class that queue's up changes and repaints everything at once when the UI becomes visible. If the UI is already visible at the time of the change a repaint will instantly be fired.
+The `UIQueuedMonoBehaviour<T>` is a base class that queue's up changes and repaints everything at once when the UI becomes visible. If the UI is already visible at the time of the change a repaint will occur instantly.
 
 Elements that are affected multiple times will only be queued once, and thus, will only repaint once.
 
