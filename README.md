@@ -2,9 +2,12 @@
 
 ## What is it?
 
-Inventory Plus is... TODO:
-<LINK TO STORE>
-<Link to devdog site>
+Inventory Plus is... 
+TODO
+
+LINK TO STORE
+
+Link to devdog site
 
 ## Getting started
 
@@ -21,10 +24,11 @@ Inventory Plus is... TODO:
 ## Examples
 
 - [General examples](Docs/Examples/GeneralExamples.md)
+- [Creating a custom UI](Docs/General/CreatingCustomUI.md)
 - [Player](Docs/General/Player.md)
 - [Triggers](Docs/General/Triggers.md)
 - [Trigger Selector](Docs/General/TriggerSelector.md)
-- [UIWindows](Docs/General/Windows.md)
+- [UI windows](Docs/General/Windows.md)
 - [Bag item](Docs/Items/CollectionItems.md)
 - [Vendors](Docs/Vendors/Vendors.md)
 - [Collections](Docs/Collections/CollectionUI.md)
