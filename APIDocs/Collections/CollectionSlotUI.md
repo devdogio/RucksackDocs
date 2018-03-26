@@ -16,6 +16,10 @@ Input handlers and UI callback receivers will be invoked in the order they're pl
 
 In case an input module consumes the PointerEventData it will not propagate to the input module below it.
 
+```csharp
+eventData.Use(); // Consumes the event and avoids further propagation.
+```
+
 An example of event propagation:
 ![EventPropagation](Assets/EventPropagation.png)
 
