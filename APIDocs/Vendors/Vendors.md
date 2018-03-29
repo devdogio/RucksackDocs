@@ -58,12 +58,13 @@ using UnityEngine;
 // Create the vendor's collections and the vendor.
 var vendorCollection = new Collection<IVendorProduct<IItemInstance>>(10);
 var vendorCurrencies = new CurrencyCollection(); // You can swap this for InfiniteCurrencyCollection if you want to ignore vendor currencies.
-var vendor = new Vendor<IItemInstance>(_vendorCollection, _vendorCurrencies);
+var vendor = new Vendor<IItemInstance>(vendorCollection, vendorCurrencies);
 
 // Create the customer wrapper object for our player.
 var customer = new Customer<IItemInstance>(Guid.NewGuid(), player, player.itemCollectionGroup, player.currencyCollectionGroup);
 
-var result = vendor.BuyFromVendor(_customer, _item1, 5);
+// Where item1 is an IItemInstance that the vendor contains.
+var result = vendor.BuyFromVendor(customer, item1, 5);
 if(result.error == null)
 {
 	// Yay, the customer bought the item.
