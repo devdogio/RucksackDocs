@@ -8,7 +8,7 @@ The `CollectionUIBase<T>` class is a useful helper class that you can use to imp
 
 ## Slots
 
-Slots represent a single item and all of it's information in the collection. See [Slot UI](CollectionSlotSUI.md) for more details.
+Slots represent a single item and all of it's information in the collection. See [Slot UI](CollectionSlotUI.md) for more details.
 
 ## Custom collection UI
 
