@@ -1,9 +1,0 @@
-- name: Docs
-  href: Docs/
-  topicHref: Docs/Index.md
-- name: API Docs
-  href: APIDocs/
-  topicHref: APIDocs/Index.md
-- name: Script reference
-  href: API/
-  topicHref: API/Index.md
