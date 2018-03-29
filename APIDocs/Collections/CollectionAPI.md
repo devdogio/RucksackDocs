@@ -102,7 +102,7 @@ collection.Remove(myItem, 3);
 var index = collection.IndexOf(myItem);
 ```
 
-> Note that IndexOf uses item equality to find items equatable to "myItem". If you want to find the index of a specific instance use `IndexOf(o => ReferenceEquals(o, myItem));` instead.
+.. Note: IndexOf uses item equality to find items equatable to "myItem". If you want to find the index of a specific instance use `IndexOf(o => ReferenceEquals(o, myItem));` instead.
 
 Using a **predicate to find** your item in the collection.
 
