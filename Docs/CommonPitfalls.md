@@ -1,3 +1,0 @@
-# Common pitfalls
-
->> TODO

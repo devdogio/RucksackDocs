@@ -1,25 +1,23 @@
-# Inventory Plus Documentation
+# Rucksack Documentation
 
-## What is it?
+![Rucksack](Assets/Rucksack.png)
 
-Inventory Plus is... 
-TODO
+Rucksack is the most flexible and extensible inventory solution with UNet support that enables you to easily setup player inventories, NPC inventories, banks, premium shops and much more!
 
-LINK TO STORE
+Rucksack requires .Net 4.6.
 
-Link to devdog site
+⚔️ [Website](http://devdog.io/): Learn more about Rucksack\
+⚔️ [Video guides](https://www.youtube.com/channel/UCWpLqoOZdE5ZWZNonkBd9eA): Get started quickly\
+⚔️ [Support](https://devdog.io/contact): Submit any questions
 
 ## Getting started
 
-## Technical documentation
+TODO
+TODO: Add link to videos
 
 ## FAQ
 
 - [FAQ](Docs/FAQ.md)
-
-## Common pitfalls
-
-- [Common pitfalls](Docs/CommonPitfalls.md)
 
 ## Examples
 
