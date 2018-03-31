@@ -6,6 +6,18 @@
 
 ![Player](Assets/Player.png)
 
+## Inventory Player
+
+In addition to the `Player` component an `*InventoryPlayer` component is also required. This defines which collections the player owns. See [Collection Creators](../Collections/CollectionCreators.md) on how to create collections.
+
+![Inventory Player](Assets/InventoryPlayer.png)
+
+## UNet Inventory Player
+
+When using UNet make sure to use the `UNetInventoryPlayer` component instead of the standard `InventoryPlayer` component.
+
+![UNet Inventory Player](Assets/UNetInventoryPlayer.png)
+
 ## Character
 
 A character component is only required on an object if you want that object to interact with the inventory system. For example: if you want a NPC to buy items from a vendor this NPC requires a character component. If your NPC does not interact with the inventory system in any way the character component is not required.
