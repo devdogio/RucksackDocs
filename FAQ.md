@@ -19,7 +19,7 @@ else{
 
 ### How do I create an item instance?
 
-Item instances can be created through the ItemFactory factory. The ItemFactory will return a new instance based on the item definition you pass into it. See [Items](../APIDocs/Items/Items.md) for more info.
+Item instances can be created through the ItemFactory factory. The ItemFactory will return a new instance based on the item definition you pass into it. See [Items](Items/Items.md) for more info.
 
 ```csharp
 public UnityItemDefinition definition;
@@ -37,7 +37,7 @@ You can of course create multiple instances of the same definition, while there 
 ### What is a collection group?
 
 A collection group is a group of collections that adds priority to each collection. For example, putting 2 collections into a single group where collection A has a priority of 5 and collection B has a priority of 10, all items will be stored in collection B first, as it has the highest priority.
-See [Collection Group](../APIDocs/Collections/CollectionGroup.md) for more info.
+See [Collection Group](Collections/CollectionGroup.md) for more info.
 
 ### How do I check if a collection / player contains an item?
 
@@ -55,15 +55,15 @@ if(collectionOwner != null)
 
 ### How do I equip / un-equip an item?
 
-By calling the `IEquippableCharacter<TEquippableItemType>` Equip or EquipAt methods. See [Equipment](../APIDocs/CharacterEquipment/Equipment.md) for more info.
+By calling the `IEquippableCharacter<TEquippableItemType>` Equip or EquipAt methods. See [Equipment](CharacterEquipment/Equipment.md) for more info.
 
 ### How do I make NPC's with their own equipment?
 
-Any character that contains a component that implements `IEquippableCharacter<TEquippableItemType>` is considered an equippable character. You can use the `UnityEquippableCharacter` component, or implement your own if you want more control. See [Equipment](../APIDocs/CharacterEquipment/Equipment.md) for more info.
+Any character that contains a component that implements `IEquippableCharacter<TEquippableItemType>` is considered an equippable character. You can use the `UnityEquippableCharacter` component, or implement your own if you want more control. See [Equipment](CharacterEquipment/Equipment.md) for more info.
 
 ### How do I extend the existing items / implement my own item behavior?
 
-See [Custom items](../APIDocs/Items/CustomItem.md).
+See [Custom items](Items/CustomItem.md).
 
 ### How do I implement a character controller?
 

@@ -6,4 +6,4 @@ A collection enabler allows you to enable / disable a collection based on a spec
 
 ![UNetTriggerItemCollectionEnabler](Assets/UNetTriggerItemCollectionEnabler.png)
 
-You can also manually specify permissions on collections and objects. See [Permission system](../../APIDocs/UNet/UNet.md).
+You can also manually specify permissions on collections and objects. See [Permission system](../UNet/UNet.md).

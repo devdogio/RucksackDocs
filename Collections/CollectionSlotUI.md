@@ -1,6 +1,65 @@
 # Collection Slot UI
 
-A Collection slot ui is a representation of a single item in a collection. Slots display the item and all of it's relevant information and handle input, so the end-user can interact with the collection.
+Inside a collection UI slots are used. A slot represents a single item in the collection and displays all information about the item.
+
+> You can create any design you like, so long the UI references are assigned in the ItemCollectionSlotUI component.
+
+![](Assets/ItemCollectionSlotUI.png)
+
+## Input handlers
+
+Input handlers, as the name describes, handle the input of a collection slot. These are modular small components that each handle a single task. This can be dragging, use to click, dropping, etc.
+
+A collection slot requires an input handler so that the user can interact with it. If you want to create a read-only collection the user can not interact with, removing all the input handlers is an easy and simple way to do this.
+
+> Note that ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
+
+![](Assets/ItemCollectionSlotUIInputHandler.png)
+
+- Use Button: The mouse button the user has to press to use the item.
+- Consume Event: When true the "click" event will not propagate to other components (components below this one will not fire).
+
+Drag handler
+
+![](Assets/ItemCollectionSlotUIDragHandler.png)
+
+- Drag Button: The button the user has to press to drag this item.
+- Handle Pointer Click: Start a drag action when the user clicks the slot once.
+- Consume Event: When true the "drag" event will not propagate to other components (components below this one will not fire).
+
+## Callbacks
+
+Any component on the slot object that implements the `ICollectionSlotUICallbackReceiver<IItemInstance>` interface will receive a callback when the slot changes. Using this you can repaint UI elements without having to fully implement your own slot type.
+
+For example: The `ItemCollectionSlotUIWorldModel` component shows a 3D model of the item inside the UI. This is done through a callback, making it an optional addition to your slot UI components.
+
+![](Assets/ItemCollectionUIWorldModel.png)
+
+## Walk through
+
+1. Create a new empty object in your canvas.
+2. Attach the `ItemCollectionSlotUI` component.
+
+![](Assets/ItemCollectionSlotUIStep1.png)
+
+3. Create and assign UI elements for repainting.
+
+I've put the Image component (icon) on the "MySlotUI" object itself. This way the icon will be the Raycast target and all child items will have the raycast target flag unchecked. For performance reasons you want to have as little raycast targets as possible.
+
+![](Assets/ItemCollectionSlotUIStep2.png)
+
+4. Add input handlers
+
+![](Assets/ItemCollectionSlotUIInputHandler.png)
+![](Assets/ItemCollectionSlotUIDragHandler.png)
+
+5. Drag the UI element to your project folder to create a prefab out of it.
+
+![](Assets/ItemCollectionSlotUIStep3.png)
+
+6. Assign the new UI prefab to your `ItemCollectionUI` component to render your item collection with the new UI prefab.
+
+![](Assets/ItemCollectionSlotUIStep4.png)
 
 ## CollectionSlotUIBase<T>
 
