@@ -14,7 +14,7 @@ Using the `ItemCollectionUI` a UI (uGUI) can be defined for a collection.
 
 The collection creator component can create a new collection. 
 
-!!! notice
+!!! note
 	The collection name set in the `ItemCollectionUI` component has to match the name set in the `ItemCollectionCreator` component.
 
 ![CollectionCreator](Assets/CollectionCreator.png)

@@ -2,7 +2,7 @@
 
 A trigger selector is responsible for selecting a single trigger based on some criteria. For example, when the player presses a button to use a trigger the trigger selector is responsible for picking the best trigger within the player's range.
 
-!!! notice
+!!! note
 	See `Assets/Create/Devdog` to create a trigger selector scriptable object.
 
 ![](Assets/TriggerSelector.png)

@@ -20,7 +20,7 @@ var item = ItemRegistry.Get(itemGuid);
 
 The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
 
-!!! notice
+!!! note
     For each custom item definition type you have to register a binding with an instance type in the item factory.
 
 ```csharp
@@ -42,7 +42,7 @@ Networked registry's (for example: for UNet) are prefixed with Server*. The Serv
 
 Item instances are run-time objects that can be created through code. These items are always based on an item definition, which is a persistent data structure that contains all basic information about the item. Because item definitions are persistent their information should not change at run-time.
 
-!!! notice
+!!! note
     Item instances need to have a constructor that takes a IItemDefinition (or derived type) and System.Guid argument.
 
 ```csharp
@@ -124,7 +124,7 @@ var useResult = myItem.Use(player, itemContext);
 
 ## Item Definition
 
-!!! notice
+!!! note
     Item Definitions only transfer their GUID over the network, therefore, make sure to persistently store all item defintions if you're using multiplayer.
 
 ### Nesting item definitions
@@ -135,7 +135,7 @@ nesting item definitions.
 For example:
 You have a "Sword" and would now like to create a "Fire Sword". This can be done through nesting item definitions.
 
-!!! notice
+!!! note
     The parent and child item definitions can not differ in type.
 
 - Parent: Sword
@@ -145,7 +145,7 @@ You have a "Sword" and would now like to create a "Fire Sword". This can be done
 In the example below the fireSword inherits all of "Swords" properties, however,
 can still handle it's own values.
 
-!!! notice
+!!! note
     When settings the fireSword.property back to the default(T) it will grab the value from it's parent (sword). For example:  ```fireSword.damage = 0;``` (where default(int) == 0). The firesword will now ignore the fireSword.damage property and use its parent property sword.damage instead.
 
 ```csharp

@@ -116,7 +116,7 @@ Getting the **amount of items** in a collection.
 var amount = collection.GetAmount(myItem);
 ```
 
-!!! notice
+!!! note
     GetAmount uses item equality to find items equatable to "myItem". And thus will sum up the amount of equatable items in the collection.
 
 Get the **amount of items at a specific index**.
@@ -160,7 +160,7 @@ if(added.error == Errors.CollectionFull)
 
 Collections also have built-in events. These will be fired when an item is added, removed or when a slot changes. These events can be very useful to repaint UI elements or to display messages to the player when the collection has changed.
 
-!!! notice
+!!! note
     Event callbacks don't have an error object, as the event will *only* fire if the action has succeeded.
 
 ```csharp

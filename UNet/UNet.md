@@ -82,7 +82,7 @@ Items can be created / generated at run-time. Item instances can contain run-tim
 
 Item instances have to be registered on the client. This can be done through the `UNetActionsBridge`. Note that items are also auto. registered on the client through collection replication.
 
-!!! notice
+!!! note
 	Registering items on clients manually is only needed if you want to pre-load it, the item is not in a collection, or need the item before it's replciated through a collection.
 
 ```csharp

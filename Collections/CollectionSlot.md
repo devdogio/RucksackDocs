@@ -49,7 +49,7 @@ To use your new [Collection](Collection.md) slot on any collection we'll have to
 !!! danger
     Note that generating new slots will wipe all data from the collection.
 
-!!! notice
+!!! note
     [Layout Collections](LayoutCollection.md) require the slot to implement the `ILayoutCollectionSlot<T>` interface instead of `ICollectionSlot<T>`.
 
 ```csharp

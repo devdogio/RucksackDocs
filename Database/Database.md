@@ -10,7 +10,7 @@ By default the `UnityDatabase<T>` is used to store data. The `UnityDatabase<T>` 
 
 Below you'll find a Mongo database example.
 
-!!! notice
+!!! note
 	You most likely don't want to create a direct connection to your database for security reasons. This a demo only.
 
 ```csharp

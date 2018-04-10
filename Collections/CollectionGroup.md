@@ -10,7 +10,7 @@ simply use a `CollectionGroup` and let the group figure it out for you.
 
 Each entry in a collection group can have a priority. Items will be added to the collections in order of priority.
 
-!!! notice
+!!! note
 	Here we're giving col1 a priority of 60. This will place new items in col1. Once col1 is full, the items will be placed in col0.
 
 ```csharp
