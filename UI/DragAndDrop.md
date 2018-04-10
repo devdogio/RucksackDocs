@@ -107,7 +107,8 @@ public sealed class EquipmentCollectionSlotDragHandler : MonoBehaviour, IDropAre
 
 If you want absolute control over the drag and drop behavior you can implement the `Devdog.InventoryPlus.UI.IDragAndDropHandler` interface and set the drag handler on the `DragAndDropUtility`.
 
-> Note that this is a global drag handler used for all drag and drop behavior. If you want to implement custom drag and drop behavior for some UI element create a component + IDropArea instead.
+!!! notice
+	This is a global drag handler used for all drag and drop behavior. If you want to implement custom drag and drop behavior for some UI element create a component + IDropArea instead.
 
 ```csharp
 using Devdog.InventoryPlus.UI;

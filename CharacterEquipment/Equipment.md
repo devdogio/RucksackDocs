@@ -1,6 +1,5 @@
 # Character Equipment
 
-
 ## Equipment editor
 
 The [Equipment Editor](../Editors/Editors.md) can be used to define equipment types. These types identify where an item can be equipped on a character.

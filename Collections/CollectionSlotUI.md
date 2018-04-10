@@ -2,7 +2,8 @@
 
 Inside a collection UI slots are used. A slot represents a single item in the collection and displays all information about the item.
 
-> You can create any design you like, so long the UI references are assigned in the ItemCollectionSlotUI component.
+!!! notice
+	You can create any design you like, so long the UI references are assigned in the ItemCollectionSlotUI component.
 
 ![](Assets/ItemCollectionSlotUI.png)
 
@@ -12,7 +13,8 @@ Input handlers, as the name describes, handle the input of a collection slot. Th
 
 A collection slot requires an input handler so that the user can interact with it. If you want to create a read-only collection the user can not interact with, removing all the input handlers is an easy and simple way to do this.
 
-> Note that ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
+!!! notice
+	ItemCollection input handlers only work on item collections. For example: A vendor collection contains products and therefore needs input handlers that implements `ICollectionSlotInputHandler<IVendorProduct<IItemInstance>>`.
 
 ![](Assets/ItemCollectionSlotUIInputHandler.png)
 
@@ -86,7 +88,8 @@ An example of event propagation:
 
 Any component on the slot object that implements the `ICollectionSlotUICallbackReceiver<T>` interface will receive a callback when the slot changes. Using this you can repaint UI elements without having to fully implement your own slot type.
 
-> Note that the type of <T> has to be the same as the collection's <T>. For example: `Collection<IItemInstance>` requires callback receivers of type `ICollectionSlotUICallbackReceiver<IItemInstance>`
+!!! notice
+	The type of <T> has to be the same as the collection's <T>. For example: `Collection<IItemInstance>` requires callback receivers of type `ICollectionSlotUICallbackReceiver<IItemInstance>`
 
 For example: The `ItemCollectionSlotUIWorldModel` component shows a 3D model of the item inside the UI. This is done through a callback, making it an optional addition to your slot UI components.
 

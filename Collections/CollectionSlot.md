@@ -46,9 +46,11 @@ public class MyLayoutCollectionSlot<T> : LayoutCollectionSlot<T>
 
 To use your new [Collection](Collection.md) slot on any collection we'll have to tell the collection to generate new slots with our new type.
 
-> Note that generating new slots will wipe all data from the collection.
+!!! danger
+    Note that generating new slots will wipe all data from the collection.
 
-> Note that [Layout Collections](LayoutCollection.md) require the slot to implement the `ILayoutCollectionSlot<T>` interface instead of `ICollectionSlot<T>`.
+!!! notice
+    [Layout Collections](LayoutCollection.md) require the slot to implement the `ILayoutCollectionSlot<T>` interface instead of `ICollectionSlot<T>`.
 
 ```csharp
 var collection = new Collection<ItemDefinition>(10);

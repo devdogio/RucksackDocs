@@ -17,8 +17,8 @@ The UNetActionsBridge is the enter and exit point for all player actions.
 - TargetRpc_* Methods can only be invoked on the server and relay their message to the client.
 - Cmd_* Methods can only be invoked on the client and relay their message to the server.
 
-> **[warning] Warning**
-> The client requires authority over the object to call Cmd_* methods. (see NetworkIdentity).
+!!! danger
+	The client requires authority over the object to call Cmd_* methods. (see NetworkIdentity).
 
 ## Permission system
 
@@ -82,7 +82,8 @@ Items can be created / generated at run-time. Item instances can contain run-tim
 
 Item instances have to be registered on the client. This can be done through the `UNetActionsBridge`. Note that items are also auto. registered on the client through collection replication.
 
-> Registering items on clients manually is only needed if you want to pre-load it, the item is not in a collection, or need the item before it's replciated through a collection.
+!!! notice
+	Registering items on clients manually is only needed if you want to pre-load it, the item is not in a collection, or need the item before it's replciated through a collection.
 
 ```csharp
 using Devdog.InventoryPlus;

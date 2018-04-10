@@ -8,13 +8,15 @@ Triggers are objects in the world that can trigger a certain behavior. This can 
 
 Input handlers are responsible for handling the input to use / un-use the trigger. This can be by the click of a mouse, tap of a finger, or the press of a (controller) button. The default `TriggerInputHandler` handles all 3 of these use cases.
 
-> Note: To use the trigger key codes your player / character will also need a [trigger selector](TriggerSelector.md).
+!!! notice
+	To use the trigger key codes your player / character will also need a [trigger selector](TriggerSelector.md).
 
 ### ITriggerInputHandler
 
 The `ITriggerInputHandler` interface can be implemented into a custom component to handle the input for the trigger.
 
-> Note that you can also inherit from `TriggerInputHandlerBase`, which contains some helper methods. Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
+!!! notice
+	You can also inherit from `TriggerInputHandlerBase`, which contains some helper methods. Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
 
 Attach the following script to your trigger to handle it's input. You can also select it through the editor.
 
@@ -85,7 +87,8 @@ The `ITriggerCallbacks` interface defines a component that can receive callbacks
 
 Attach the script to your trigger so it will receive callbacks.
 
-> Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
+!!! notice
+	Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
 
 ```csharp
 using Devdog.General;

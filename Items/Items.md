@@ -20,7 +20,8 @@ var item = ItemRegistry.Get(itemGuid);
 
 The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
 
-> Note that for each custom item definition type you have to register a binding with an instance type in the item factory.
+!!! notice
+    For each custom item definition type you have to register a binding with an instance type in the item factory.
 
 ```csharp
 // Create a binding between the UnityItemDefinition and the UnityItemInstance.
@@ -41,7 +42,8 @@ Networked registry's (for example: for UNet) are prefixed with Server*. The Serv
 
 Item instances are run-time objects that can be created through code. These items are always based on an item definition, which is a persistent data structure that contains all basic information about the item. Because item definitions are persistent their information should not change at run-time.
 
-> Item instances need to have a constructor that takes a IItemDefinition (or derived type) and System.Guid argument.
+!!! notice
+    Item instances need to have a constructor that takes a IItemDefinition (or derived type) and System.Guid argument.
 
 ```csharp
 // An example of a constructor for an item instance type.
@@ -122,8 +124,8 @@ var useResult = myItem.Use(player, itemContext);
 
 ## Item Definition
 
-> Item Definitions only transfer their GUID over the network, therefore,
-make sure to persistently store all item defintions if you're using multiplayer.
+!!! notice
+    Item Definitions only transfer their GUID over the network, therefore, make sure to persistently store all item defintions if you're using multiplayer.
 
 ### Nesting item definitions
 
@@ -133,7 +135,8 @@ nesting item definitions.
 For example:
 You have a "Sword" and would now like to create a "Fire Sword". This can be done through nesting item definitions.
 
-> Note: The parent and child item definitions can not differ in type.
+!!! notice
+    The parent and child item definitions can not differ in type.
 
 - Parent: Sword
 - Child Fire Sword
@@ -142,10 +145,8 @@ You have a "Sword" and would now like to create a "Fire Sword". This can be done
 In the example below the fireSword inherits all of "Swords" properties, however,
 can still handle it's own values.
 
-> When settings the fireSword.property back to the default(T) it will grab
-the value from it's parent (sword).
-For example:  ```fireSword.damage = 0;``` (where default(int) == 0). The firesword will now
-ignore the fireSword.damage property and use its parent property sword.damage instead.
+!!! notice
+    When settings the fireSword.property back to the default(T) it will grab the value from it's parent (sword). For example:  ```fireSword.damage = 0;``` (where default(int) == 0). The firesword will now ignore the fireSword.damage property and use its parent property sword.damage instead.
 
 ```csharp
 // Set some basic stuff
@@ -188,7 +189,8 @@ fireSword.damage == sword.damage;
 When creating a custom item definition you have to make a small adjustment to make it compatible with nesting.
 This is very simple and is handled by extension methods.
 
-> Always use the this.GetValue(o => o._property); selector to select your items to enable nesting.
+!!! danger
+    Always use the this.GetValue(o => o._property); selector to select your items to enable nesting.
 
 ```csharp
 public partial class MyUnityItemDefinition : UnityItemDefinition

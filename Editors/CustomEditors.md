@@ -65,10 +65,12 @@ public class ItemEditor : InventoryEditorCrudBase<UnityItemDefinition>
 
 Pages can be created by adding a single `[EditorPage("Items/TabName")]` attribute to your class.
 
-> Note that your class has to inherit from `EditorCrudBase<T>` or anything that inherits from it like `InventoryEditorCrudBase<T>`.
+!!! notice
+	Your class has to inherit from `EditorCrudBase<T>` or anything that inherits from it like `InventoryEditorCrudBase<T>`.
 
 ## Overwriting an editor page
 
 In case you want to completely replace an existing editor page you can add a higher priority to your `[EditorPage("Items/TabName", order: 20, priority: 100)]` attribute.
 
-> Note that this will completely overwrite any existing tabs.
+!!! danger
+	This will completely overwrite any existing tabs.

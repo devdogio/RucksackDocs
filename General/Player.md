@@ -2,7 +2,8 @@
 
 `Player`'s are controlled by an end-user, while `Character`'s are any type of character in your game (monster, npc, etc).
 
-> A `Player` is a `Character`. You don't need to add the `Character` component to your player object, just the `Player` component.
+!!! notice
+	A `Player` is a `Character`. You don't need to add the `Character` component to your player object, just the `Player` component.
 
 ![Player](Assets/Player.png)
 

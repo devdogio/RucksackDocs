@@ -113,7 +113,8 @@ public class MyItemDefinition : UnityItemDefinition
 
 The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
 
-> Note that for each custom item definition type you have to register a binding with an instance type in the item factory.
+!!! notice
+	For each custom item definition type you have to register a binding with an instance type in the item factory.
 
 ```csharp
 // Create a binding between the UnityItemDefinition and the UnityItemInstance.

@@ -70,7 +70,8 @@ The `UIWindowVisuals` component can handle the visuals for a window, such as sho
 
 `UIWindow` events can be used to synchronize UI elements, enable / disable controllers, etc.
 
-> Don't forget to unsubscribe your events when your object gets destroyed or disabled.
+!!! danger
+	Don't forget to unsubscribe your events when your object gets destroyed or disabled.
 
 ```csharp
 using UnityEngine;
