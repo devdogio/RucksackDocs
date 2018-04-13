@@ -5,6 +5,10 @@ Start by importing Rucksack and changing Unity's .Net version to 4.6.
 
 Alright, now we're ready to get going!
 
+## Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fQXOAHr50ag" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Creating a player
 
 See [Player](General/Player.md) for more info.
