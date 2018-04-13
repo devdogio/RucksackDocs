@@ -1,6 +1,20 @@
 site_name: Rucksack Docs
+site_author: Devdog
+repo_name: devdogio/RucksackDocs
 repo_url: https://github.com/devdogio/RucksackDocs
 edit_uri: ""
 site_url: https://devdog.io
 markdown_extensions:
  - admonition
+
+# Customization
+extra:
+  social:
+    - type: globe
+      link: https://devdog.io
+    - type: github-alt
+      link: https://github.com/devdogio
+    - type: twitter
+      link: https://twitter.com/DevdogUnity
+    - type: facebook
+      link: https://www.facebook.com/DevdogUnity
