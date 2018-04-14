@@ -7,4 +7,3 @@ edit_uri: ""
 
 markdown_extensions:
  - admonition
- - edit_on_github
