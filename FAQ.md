@@ -1,5 +1,9 @@
 # FAQ
 
+### Errors on import
+
+Getting errors like `cannot be used because it is not part of the C# 4.0 language specification` when importing Rucksack? Make sure you're using .Net 4.6 and that you're using Unity 2017.3+
+
 ### How do I add or remove items from a player's inventory?
 
 ```csharp
