@@ -1,5 +1,13 @@
 # FAQ
 
+### Errors on import
+
+Getting errors like `cannot be used because it is not part of the C# 4.0 language specification` when importing Rucksack? Make sure you're using .Net 4.6 and that you're using Unity 2017.3+
+
+### Can I use Rucksack for a singleplayer game?
+
+Absolutely! Rucksack comes with singleplayer components and multiplayer components. In most cases it would be recommended to create a multiplayer game and run as a host (both server and client). If you intend to build a singleplayer game, and never want to support multiplayer you can use the singleplayer components. 
+
 ### How do I add or remove items from a player's inventory?
 
 ```csharp

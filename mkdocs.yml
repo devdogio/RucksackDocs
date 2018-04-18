@@ -1,5 +1,9 @@
 site_name: Rucksack Docs
-repo_url: https://github.com/devdogio/RucksackDocs
+site_author: Devdog
 site_url: https://devdog.io
+
+repo_url: https://github.com/devdogio/RucksackDocs
+edit_uri: ""
+
 markdown_extensions:
  - admonition

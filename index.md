@@ -4,10 +4,10 @@
 
 Rucksack is the most flexible and extensible inventory solution with UNet support that enables you to easily setup player inventories, NPC inventories, banks, premium shops and much more!
 
-**Rucksack requires .Net 4.6.**
+**Rucksack requires .Net 4.6 and Unity 2017.3+**
 
 - ⚔️ [Website](http://devdog.io/): Learn more about Rucksack
-- ⚔️ [Video guides](https://www.youtube.com/channel/UCWpLqoOZdE5ZWZNonkBd9eA): Get started quickly
+- ⚔️ [Video guides](https://youtu.be/fQXOAHr50ag): Get started quickly
 - ⚔️ [Support](https://devdog.io/contact): Submit any questions
 
 ## Getting started
