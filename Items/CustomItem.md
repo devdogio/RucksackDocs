@@ -95,11 +95,6 @@ public class MyItemDefinition : UnityItemDefinition
 	{
 		get { return _level; }
 	}
-
-	public override IItemInstance CreateInstance(Guid instanceGuid)
-	{
-		return new MyItemInstance(instanceGuid, this);
-	}
 }
 ```
 
