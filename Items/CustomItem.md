@@ -31,13 +31,6 @@ using UnityEngine;
 [System.Serializable]
 public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 {
-    public Guid ID { get; }
-    public IItemDefinition itemDefinition { get; }
-    public int maxStackSize
-    {
-        get { return itemDefinition.maxStackSize; }
-    }
-    
     // For (de)serialization...
     protected MyItemInstance()
     { }
@@ -61,6 +54,7 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 			return canUse;
 		}
 		
+		// Fetch a custom component from your player object and check it's level.
 		var myComponent = character.GetComponent<MyComponent>();
 		if(myComponent.playerLevel < ((MyItemDefinition)itemDefinition).level)
 		{
