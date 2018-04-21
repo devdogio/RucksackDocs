@@ -54,7 +54,7 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 			return canUse;
 		}
 		
-		// Fetch a custom component from your player object and check it's level.
+		// Fetch a custom component from your player object and check its level.
 		var myComponent = character.GetComponent<MyComponent>();
 		if(myComponent.playerLevel < ((MyItemDefinition)itemDefinition).level)
 		{
