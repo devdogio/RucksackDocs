@@ -9,6 +9,9 @@ Alright, now we're ready to get going!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fQXOAHr50ag" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+!!! warn
+There is a mistake in the video tutorial. A `UNetItemFactory` component needs to be added to the _Managers or _UNet object. This is not shown in the video, but is required. 
+
 ## Creating a player
 
 See [Player](General/Player.md) for more info.
