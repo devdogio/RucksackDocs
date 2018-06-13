@@ -167,8 +167,6 @@ Collections also have built-in events. These will be fired when an item is added
 collection.OnAddedItem += (sender, result) =>
 {
     // result.affectedSlots = The slots changed by this action. If the stack is split between multiple slots this will return you all the modified slots.
-    // result.item = The placed item.
-    // result.amount = The placed amount
 };
 ```
 
