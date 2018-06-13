@@ -2,7 +2,5 @@ site_name: Rucksack Docs
 site_author: Devdog
 site_url: https://devdog.io
 
-site_dir: .
-
 markdown_extensions:
  - admonition
