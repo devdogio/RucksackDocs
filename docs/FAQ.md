@@ -8,6 +8,31 @@ Getting errors like `cannot be used because it is not part of the C# 4.0 languag
 
 Absolutely! Rucksack comes with singleplayer components and multiplayer components. In most cases it would be recommended to create a multiplayer game and run as a host (both server and client). If you intend to build a singleplayer game, and never want to support multiplayer you can use the singleplayer components. 
 
+### Does Rucksack work with Photon / other network libraries?
+
+Short answer: No. Rucksack only has a pre-built integration with UNet. All other networking libraries are not officially supported. Other networking systems, like photon, can be implemented manually.
+
+### Is Rucksack compatible with Inventory Pro?
+
+Rucksack is not compatible with Inventory Pro. Inventory pro is a singleplayer only inventory solution which strongly leans towards RPG and survival games. Rucksack is multiplayer ready and game-agnostic, meaning that it does not have any game specific integrations and due to it's flexibility can support any game type.
+
+### The difference between Rucksack and Inventory Pro
+
+| Feature | Rucksack | Inventory Pro |
+| ------------- |:-------------:|:--------------:|
+| Multiplayer | ✅ | ❌ |
+| Authoritative server | ✅ | ❌ |
+| Modular design | ✅ | ❌ |
+| Modular UI system | ✅ | ❌ |
+| Modular input system | ✅ | ❌ |
+| .Net 4.6 | ✅ | ❌ |
+| Inventory | ✅ | ✅ |
+| Vendor | ✅ | ✅ |
+| Bank | ✅ | ✅ |
+| Item editor | ✅ | ✅ |
+| Item and Character stat system | ❌ | ✅ |
+| Crafting | ❌ | ✅ |
+
 ### How do I add or remove items from a player's inventory?
 
 ```csharp
