@@ -26,12 +26,26 @@ Rucksack is not compatible with Inventory Pro. Inventory pro is a singleplayer o
 | Modular UI system | ✅ | ❌ |
 | Modular input system | ✅ | ❌ |
 | .Net 4.6 | ✅ | ❌ |
+| Item Inheritance | ✅ | ❌ |
+| NPC equipment | ✅ | ❌ |
+| NPC inventory | ✅ | ❌ |
 | Inventory | ✅ | ✅ |
+| Player Equipment | ✅ | ✅ |
 | Vendor | ✅ | ✅ |
 | Bank | ✅ | ✅ |
 | Item editor | ✅ | ✅ |
-| Item and Character stat system | ❌ | ✅ |
+| Stat system | ❌ | ✅ |
 | Crafting | ❌ | ✅ |
+
+#### Feature descriptions
+
+- **Multiplayer**: A full fledged multiplayer integration based on UNet.
+- **Authoritative server**: Server authority over all actions (cheat proof).
+- **Modular Design**: All components are modular, ranging from input to vendors and collections.
+- **Net 4.6**: Rucksack uses the latest version of .Net for future compatibility and ease of use.
+- **Item Inheritance**: Create variations of items through [Item Inheritance](Items/Items.md#item-definition).
+- **NPC Equipment**: Visually equip items to any character, such as, your NPCs.
+- **NPC Inventory**: Give any object or instance it's own inventory.
 
 ### How do I add or remove items from a player's inventory?
 
