@@ -6,6 +6,10 @@ UNet multiplayer support is built-in, and can be used with minimal setup.
 
 The server is authoritative, meaning that the server decides everything for the player. The player can request certain actions from the server (such as using an item), however, the server will always validate and decide if the action is permitted. This prevents cheating, but does add a roundtrip to the server for each networked action.
 
+## UNetItemFactory
+
+The `UNetItemFactory` adds bindings to the item factory for UNet specific item types. This makes sure that all items created through `ItemFactory` are UNet compatible. You can add this component to any object in your scene. For consistency attaching it to a _Managers or _UNet object is recommended.
+
 ## UNetActionsBridge
 
 The UNetActionsBridge is the enter and exit point for all player actions.
