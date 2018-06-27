@@ -10,6 +10,10 @@ The server is authoritative, meaning that the server decides everything for the 
 
 The UNetActionsBridge is the enter and exit point for all player actions.
 
+## UNetInitPlayer
+
+The `UNetInitPlayer` is a simple component that registers your player locally whenever the server gives permission (OnStartAuthority). Attach this component to your player and disable `init on start` on your default Player component.
+
 ### Naming convention
 
 - Server_* Methods can only be invoked on the server.

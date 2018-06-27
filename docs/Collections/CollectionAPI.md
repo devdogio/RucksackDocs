@@ -72,6 +72,13 @@ To **get an item** from the collection use the sub ([]) operator.
 var item = collection[0];
 ```
 
+To **get an item's definition** from the collection use the sub([]) operator.
+
+```csharp
+var item = collection[index];
+var definition = item.itemDefinition;
+```
+
 To **add an item** we simply call the Add method.
 
 ```csharp
@@ -140,6 +147,15 @@ var added = collection.Add(myItem);
 
 // added.error
 // added.result
+if(added.error == null)
+{
+    // Action succeeded
+    // use added.result here.
+}
+else
+{
+    // Action failed.
+}
 ```
 
 When our item is successfully added to the collection we can find information about the placement in the added.result variable. If the placement, however, went wrong for whatever reason, we'll get an error objects back in the added.error variable.
@@ -152,7 +168,7 @@ Errors can be compared to check which error was thrown when trying to place this
 var added = collection.Add(myItem);
 if(added.error == Errors.CollectionFull)
 {
-    // Aww, the collection is full; Can't place this item.
+    // The collection is full; Can't place this item.
 }
 ```
 
@@ -167,6 +183,20 @@ Collections also have built-in events. These will be fired when an item is added
 collection.OnAddedItem += (sender, result) =>
 {
     // result.affectedSlots = The slots changed by this action. If the stack is split between multiple slots this will return you all the modified slots.
+
+    foreach (int slotIndex in result.affectedSlots)
+    {
+        // Get the amount of items in the slot that was changed
+        var amount = collection.GetAmount(slotIndex);
+
+        // Grab the item at a given lot
+        var itemInstance = collection[slotIndex];
+
+        // Grab item definition from item instance.
+        var itemDefinition = itemInstance.itemDefinition;
+
+        // For more methods see API above.
+    }
 };
 ```
 
@@ -183,6 +213,7 @@ public class MyRestriction<T> : ICollectionRestriction<T>
 {
     public Result<bool> CanAdd(T item)
     {
+        // "true" will implicitly be converted to "new Result<bool>(true);"
         return true;
     }
 
