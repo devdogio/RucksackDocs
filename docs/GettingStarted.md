@@ -12,8 +12,8 @@ Alright, now we're ready to get going!
 !!! warning
 	There is a mistake in the video tutorial.
 
-	- A `UNetItemFactory` component needs to be added to the _Managers or _UNet object. [More info](UNet/UNet.md#UNetItemFactory)
-	- A UNetInitPlayer component needs to be added to the player object. [More Info](UNet/UNet.md#UNetInitPlayer)
+	- A `UNetItemFactory` component needs to be added to the _Managers or _UNet object. [More info](UNet/UNet.md#unetitemfactory)
+	- A UNetInitPlayer component needs to be added to the player object. [More Info](UNet/UNet.md#unetinitplayer)
 	
 	This is not shown in the video, but is required.
 
