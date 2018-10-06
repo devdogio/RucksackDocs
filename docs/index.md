@@ -13,7 +13,7 @@ Rucksack is the most flexible and extensible inventory solution with UNet suppor
 ## Getting started
 
 - [Getting Started Guide](GettingStarted.md)
-- [About the demos](AboutTheDemos.md)
+- [About the Demos](AboutTheDemos.md)
 
 ## FAQ
 
