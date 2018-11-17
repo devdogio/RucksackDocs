@@ -21,8 +21,6 @@ Rucksack is the most flexible and extensible inventory solution with UNet suppor
 
 ## Examples
 
-- [General examples](Examples/GeneralExamples.md)
-- [Creating a custom UI](General/CreatingCustomUI.md)
 - [Player](General/Player.md)
 - [Triggers](General/Triggers.md)
 - [Trigger Selector](General/TriggerSelector.md)
