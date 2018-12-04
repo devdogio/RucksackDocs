@@ -18,6 +18,10 @@ Item equality is used to identify if items can be stacked, as well as to find it
 
 By default the Collection class can be used to instantiate a new collection. if you, however, want more control over your types you can implement a new collection by inheriting from `CollectionBase<TSlotType, TElementType>`, or by implementing the `ICollection<T>` interface.
 
+## Collection Owners
+
+The ICollectionOwner interfaces (`IInventoryCollectionOwner`, `IEquipmentCollectionOwner`, `ICurrencyCollectionOwner`) are used to indicate an object owns a collection. This is the common interface used to find inventory, equipment and currency collections on an object.
+
 ## Creating a collection
 
 Using the `ItemCollectionCreator` or the `UNetItemCollectionCreator` for UNet you can create a collection. These 2 components can be attached to any Unity object. Optionally, you can also manually create collections through code. See the [Collection API](CollectionAPI.md) docs for more info.
