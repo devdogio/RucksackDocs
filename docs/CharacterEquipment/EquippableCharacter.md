@@ -5,7 +5,7 @@ A custom equippable character. When an item is equipped or un-equipped the `MyEq
 ```csharp
 public class MyEquippableCharacter : UnityEquippableCharacter
 {
-	public override Result<EquipmentResult<TEquippableType>[]> Equip(TEquippableType item, int amount = 1)
+	public override Result<EquipmentResult<IUnityEquippableItemInstance>[]> Equip(IUnityEquippableItemInstance item, int amount = 1)
 	{
 		var result = base.Equip(item, amount);
 		if(result.error == null)
@@ -16,7 +16,7 @@ public class MyEquippableCharacter : UnityEquippableCharacter
 		return result;
 	}
 
-	public override Result<EquipmentResult<TEquippableType>> EquipAt(int index, TEquippableType item, int amount = 1)
+	public override Result<EquipmentResult<IUnityEquippableItemInstance>> EquipAt(int index, IUnityEquippableItemInstance item, int amount = 1)
 	{
 		var result = base.EquipAt(index, item, amount);
 		if(result.error == null)
@@ -27,7 +27,7 @@ public class MyEquippableCharacter : UnityEquippableCharacter
 		return result;
 	}
 
-	public override Result<UnEquipmentResult> UnEquip(TEquippableType item, int amount = 1)
+	public override Result<UnEquipmentResult> UnEquip(IUnityEquippableItemInstance item, int amount = 1)
 	{
 		var result = base.UnEquip(item, amount);
 		if(result.error == null)
