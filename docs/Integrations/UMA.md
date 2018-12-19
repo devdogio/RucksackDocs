@@ -14,11 +14,11 @@ Using UMA with Rucksack requires these step steps below. This assumes that you a
 
 You can create UMAEquipableItems using the Main Editor.
 
-![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\UMA_Items.PNG)
+![](Assets\UMA_Items.PNG)
 
 Once the item is created, you can set up its properties. Most properties are the same as for other equipable items (although you need not in general set up the mounting point.)
 
-![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\UMA_EditItem.PNG)
+![](Assets\UMA_EditItem.PNG)
 
 Below is a description of the UMA-specific properties. UMA Equip Slot and UMA Overlay Data Asset will be marked red if they are not set, since they are required fields.   
 
