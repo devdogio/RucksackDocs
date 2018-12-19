@@ -25,11 +25,12 @@ There are two components that can be used *instead* of their uGUI counterparts.
 
 ## Tooltip
 
-There are two components that can be used instead of their uGUI counterparts.
+There are three components that can be used instead of their uGUI counterparts.
 
 | uGUI                           | TextMesh Pro                       |
 | ------------------------------ | ---------------------------------- |
 | `ItemCollectionTooltipHandler` | `TMP_ItemCollectionTooltipHandler` |
+| `ItemVendorCollectionTooltipHandler` | `TMP_ItemVendorCollectionTooltipHandler` |
 | `ItemTooltipUI`                | `TMP_ItemTooltipUI`                |
 
 ## Extension Methods
