@@ -18,7 +18,7 @@ This integration supports two types of item.
 - **UMARecipeItemDefinition:** This item applies a UMA recipe to a character.
 
 !!! warning "Note"
-    It is not possible to use both types of items on a character at the same time.
+    It is not possible to use both types of items on a character at the same time. 
 
 ## Creating Items
 
