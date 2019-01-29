@@ -25,6 +25,7 @@ To setup your scene to use these items, you need to do the following:
    1. `Player`
    2. `InventoryPlayer`
    3. `DropHandler` 
+   4. `RFPSPWeaponsHandler`
       ![](Assets\RFPSP_Player.PNG)
 4. Add the Weapon component to each weapon under **FPS Weapons**, and link in the appropriate item definition file for that weapon. 
    ![](Assets\RFPSP_Weapons.PNG)
