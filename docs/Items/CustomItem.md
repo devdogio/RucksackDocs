@@ -21,31 +21,31 @@ var item = ItemRegistry.Get(itemGuid);
 ## Item Instance
 
 ```csharp
+using Devdog.General2;
+using Devdog.Rucksack;
+using Devdog.Rucksack.Items;
 using System;
-using Devdog.General;
-using Devdog.InventoryPlus.Items;
-using Devdog.InventoryPlus.Characters;
-using Devdog.InventoryPlus.Collections;
+
 using UnityEngine;
 
 [System.Serializable]
 public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 {
-    // For (de)serialization...
-    protected MyItemInstance()
-    { }
-    
-    public MyItemInstance(Guid ID, IItemDefinition itemDefinition)
-    {
-        if (itemDefinition == null)
-        {
-            throw new ArgumentException("Given ItemDefintiion is null!");
-        }
-        
-        this.ID = ID;
-        this.itemDefinition = itemDefinition;
-    }
-    
+	// For (de)serialization...
+	protected MyItemInstance()
+	{ }
+
+	public MyItemInstance(Guid ID, IUnityItemDefinition itemDefinition)
+	{
+		if (itemDefinition == null)
+		{
+			throw new ArgumentException("Given ItemDefintiion is null!");
+		}
+
+		this.ID = ID;
+		this.itemDefinition = itemDefinition;
+	}
+
 	public override Result<bool> CanUse(Character character, ItemContext useContext)
 	{
 		var canUse = base.CanUse(character, useContext);
@@ -53,10 +53,10 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 		{
 			return canUse;
 		}
-		
+
 		// Fetch a custom component from your player object and check its level.
 		var myComponent = character.GetComponent<MyComponent>();
-		if(myComponent.playerLevel < ((MyItemDefinition)itemDefinition).level)
+		if (myComponent.playerLevel < ((MyItemDefinition)itemDefinition).level)
 		{
 			return new Result<bool>(false, new Error(123, "Player level is too low"));
 		}
@@ -81,10 +81,7 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 ## Item Definition
 
 ```csharp
-using System;
-using Devdog.General;
-using Devdog.InventoryPlus.CharacterEquipment;
-using Devdog.InventoryPlus.CharacterEquipment.Items;
+using Devdog.Rucksack.Items;
 using UnityEngine;
 
 public class MyItemDefinition : UnityItemDefinition
@@ -103,7 +100,7 @@ public class MyItemDefinition : UnityItemDefinition
 The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
 
 !!! note
-	For each custom item definition type you have to register a binding with an instance type in the item factory.
+​	For each custom item definition type you have to register a binding with an instance type in the item factory.
 
 ```csharp
 // Create a binding between the UnityItemDefinition and the UnityItemInstance.
