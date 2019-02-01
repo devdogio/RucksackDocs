@@ -10,7 +10,7 @@ This integration provides components that work with the Dialog System asset.
 ## Dialog System Quest Items 	
 Quest items adds a quest to the player when used. 
 
-![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\DialogSystem_QuestItem.PNG)
+![](Assets\DialogSystem_QuestItem.PNG)
 
 - **Dialog System Quest ID:** the ID of the quest added to the player when the item is used.
 - **Can Use After Quest Already Completed:** Set this to false if you only want the player to have the quest once.
@@ -22,15 +22,15 @@ This component links a Rucksack Trigger with a line of dialog spoken.
 
 1. Add a custom field to the Dailog Entry template called "LineTag", which should take a Text value.
 
-   ![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\DialogSystem_LineTag.PNG)
+   ![](Assets\DialogSystem_LineTag.PNG)
 
 2. For the Dialog Entry you wish to trigger, set the LineTag to a suitable value.
 
-   ![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\DialogSystem_LineTag_Entry.PNG)
+   ![](Assets\DialogSystem_LineTag_Entry.PNG)
 
 3. Add the ConversationTrigger on the same object as the Trigger, and set the lineTag field to the same value you used in the last step.
 
-   ![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\DialogSystem_ConversationTrigger.PNG)
+   ![](Assets\DialogSystem_ConversationTrigger.PNG)
 
 In the demo scene, when the player answers "Yes" to the vendor, the vendor trigger is used, and so the Vendor window is displayed. This is implemented using the mechanism above.
 
@@ -42,7 +42,7 @@ There are a few methods registered that you can access from LUA. To use these, f
 
 2. Add a Unity Database Manager component to your _Managers object, and connect your items, currencies and equipment types databases.
 
-   ![](C:\Users\Gamelogic.GAMELOGICHP.000\Documents\Code\DevDog\Docs\Rucksack\docs\Integrations\Assets\DialogSystem_Databases.PNG)
+   ![](Assets\DialogSystem_Databases.PNG)
 
 The following methods are available:
 
