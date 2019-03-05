@@ -105,7 +105,13 @@ public sealed class EquipmentCollectionSlotDragHandler : MonoBehaviour, IDropAre
 	{
 		foreach (var dropArea in targetDropArea)
             {
-                var targetSlot = (dropArea as UnityEngine.Component)?.GetComponent<CollectionSlotUIBase>() as CollectionSlotUIBase<IItemInstance>;
+	    	var c = dropArea as UnityEngine.Component;
+		if(c == null)
+		{
+		    continue;
+		}
+		
+                var targetSlot = c.GetComponent<CollectionSlotUIBase>() as CollectionSlotUIBase<IItemInstance>;
                 
                 if (targetSlot != null)
                 {
