@@ -48,7 +48,7 @@ A Collection slot drag handler is an example of an `IDropArea`.
 
 ```csharp
 using Devdog.General;
-using Devdog.InventoryPlus.UI;
+using Devdog.Rucksack.UI;
 
 public sealed class MyCustomDropArea : MonoBehaviour, IDropArea
 {
@@ -83,22 +83,47 @@ This is useful if you want the source to clean up resources when the item is dra
 
 ```csharp
 using Devdog.General;
-using Devdog.InventoryPlus.UI;
+using Devdog.Rucksack.UI;
 
 public sealed class EquipmentCollectionSlotDragHandler : MonoBehaviour, IDropAreaSourceOverwriter
 {
-	public Result<bool> CanDropDraggingItemOnTarget(DragAndDropUtility.Model model, IDropArea targetDropArea, PointerEventData eventData)
+	public Result<bool> CanDropDraggingItemOnTarget(DragAndDropUtility.Model model, List<IDropArea> targetDropArea, PointerEventData eventData)
 	{
-		return targetDropArea.CanDropDraggingItem(model, eventData);
+		foreach (var dropArea in targetDropArea)
+            {                
+                
+                if (dropArea.CanDropDraggingItem(model, eventData).result)
+                {
+                    return true;
+                }
+            }
+
+            return new Result<bool>(false, Errors.UIDragFailedIncompatibleDragObject);
 	}
 
-	public void DropDraggingItemOnTarget(DragAndDropUtility.Model model, IDropArea targetDropArea, PointerEventData eventData)
+	public void DropDraggingItemOnTarget(DragAndDropUtility.Model model, List<IDropArea> targetDropArea, PointerEventData eventData)
 	{
-		var targetSlot = (targetDropArea as UnityEngine.Component)?.GetComponent<CollectionSlotUIBase>();
-		if (targetSlot != null)
+		foreach (var dropArea in targetDropArea)
+            {
+	    	var c = dropArea as UnityEngine.Component;
+		if(c == null)
 		{
-			// Move item to 'targetSlot'.
+		    continue;
 		}
+		
+                var targetSlot = c.GetComponent<CollectionSlotUIBase>() as CollectionSlotUIBase<IItemInstance>;
+                
+                if (targetSlot != null)
+                {
+                    var itemInTargetSlot = targetSlot.current;	//eg. Grab Item from target slot
+                    //Do something with with this item
+		    
+		    dropArea.DropDraggingItem(model, eventData);	//<<< Start drop action where "model" is dragging item
+                }
+
+                eventData.Use();
+                break;
+            }
 	}
 }
 ```
@@ -111,7 +136,7 @@ If you want absolute control over the drag and drop behavior you can implement t
 	This is a global drag handler used for all drag and drop behavior. If you want to implement custom drag and drop behavior for some UI element create a component + IDropArea instead.
 
 ```csharp
-using Devdog.InventoryPlus.UI;
+using Devdog.Rucksack.UI;
 
 public class MyDragAndDropHandler : IDragAndDropHandler
 {
@@ -122,7 +147,7 @@ public class MyDragAndDropHandler : IDragAndDropHandler
 And finally, set your drag handler in the `DragAndDropUtility`.
 
 ```csharp
-using Devdog.InventoryPlus.UI;
+using Devdog.Rucksack.UI;
 
 // Call somewhere at game init.
 DragAndDropUtility.handler = new MyDragAndDropHandler();
