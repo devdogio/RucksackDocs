@@ -21,7 +21,7 @@ The `ITriggerInputHandler` interface can be implemented into a custom component 
 Attach the following script to your trigger to handle it's input. You can also select it through the editor.
 
 ```csharp
-using Devdog.General;
+using Devdog.General2;
 
 public class MyTriggerInputHandler : TriggerInputHandlerBase
 {
@@ -91,7 +91,7 @@ Attach the script to your trigger so it will receive callbacks.
 	Your class has to inherit from `MonoBehavour` so it can be attached to the trigger as a component.
 
 ```csharp
-using Devdog.General;
+using Devdog.General2;
 
 public sealed class MyTriggerCallbacks : MonoBehaviour, ITriggerCallbacks
 {
