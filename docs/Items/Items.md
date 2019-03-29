@@ -108,11 +108,11 @@ Using the item instance is simple; Simply pass in the character using the item a
 
 ```csharp
 using System;
-using Devdog.General;
-using Devdog.InventoryPlus.Items;
+using Devdog.General2;
+using Devdog.Rucksack.Items;
 
 
-var player = PlayerManager.instance.currentPlayer;
+var player = PlayerManager.currentPlayer;
 var itemContext = new ItemContext()
 {
 	// Completely optional you can define if you want to use more than 1.
