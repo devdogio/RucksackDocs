@@ -20,7 +20,7 @@ You can create mountpoints by attaching one of these to a GameObject on your cha
 
 ## Equipping An Item
 
-You can equip an item with the `IItemInstance.Use()` function. The example below gets the Item Instance from the UI slot and equips it to the current player character.
+You can equip an item with the `IItemInstance.Use()` function. The example below gets the Item Instance from the UI slot and equips it to the current player character. 
 
 ```cs
 using Devdog.General2;
@@ -28,14 +28,15 @@ using Devdog.Rucksack.Items;
 using Devdog.Rucksack.UI;
 using UnityEngine;
 
-public class EquipmentUISlotPrefab : MonoBehaviour {
-    private IItemInstance itemInstance;
-    // Default ItemContext is fine to get things working
-    private ItemContext itemContext = new ItemContext();
+public sealed class MyItemCollectionSlotInputHandler : MonoBehaviour, ICollectionSlotInputHandler<IItemInstance>, IPointerClickHandler
+{
+    public UnityItemDefinition itemDefinition;
+    public IItemInstance itemInstance;
 
-    private void Start() {
-        // Get a reference to the ItemInstance in the UI Slot
-        itemInstance = GetComponent<ItemCollectionSlotUI>().current;
+    private CollectionSlotUIBase<IItemInstance> _slot;
+    private void Awake()
+    {
+        itemInstance = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid());
     }
 
     // Link this in a UI button click/touch to equip this item
