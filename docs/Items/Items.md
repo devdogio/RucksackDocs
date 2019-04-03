@@ -29,6 +29,7 @@ The `ItemFactory` is a simple static class that is used to create new item insta
 ItemFactory.Bind<UnityItemDefinition, UnityItemInstance>();
 
 // Creates a new instance for the given itemDefinition. Based on the itemDefinition type and the set bindings a new instance will be returned.
+// This also registers the new item instance in the Item Registry
 var inst = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid());
 ```
 

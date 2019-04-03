@@ -6,6 +6,7 @@ See [Items](Items.md) for a detailed description about item instances and item d
 
 The `ItemRegistry` is responsible for keeping track of all item instances.
 Keep in mind that if you're going to create a new item instance you'll have to register it with the item registry.
+Note that using `ItemFactory` will automatically register new item instances for you.
 
 ```csharp
 // Registering an item in the registry.
