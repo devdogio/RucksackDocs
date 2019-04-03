@@ -20,7 +20,7 @@ You can create mountpoints by attaching one of these to a GameObject on your cha
 
 ## Equipping An Item
 
-You can equip an item with the `IItemInstance.Use()` function. The example below gets the Item Instance from the UI slot and equips it to the current player character. 
+You can equip an item with the `IItemInstance.Use()` function. The example below creates a new Item Instance from an item definition and uses the instance. 
 
 ```cs
 using Devdog.General2;
