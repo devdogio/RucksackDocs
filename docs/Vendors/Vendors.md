@@ -12,7 +12,7 @@ Vendors have to be indexed in vendor registries so it can be looked up at a late
 
 ```csharp
 using System;
-using Devdog.InventoryPlus.Vendors;
+using Devdog.Rucksack.Vendors;
 
 // Registering a vendor
 VendorRegistry.itemVendors.Register(vendorGuid, vendor);
@@ -33,9 +33,9 @@ For example: You may want to give certain players a discount, while making other
 
 ```csharp
 using System;
-using Devdog.General;
-using Devdog.InventoryPlus.Items;
-using Devdog.InventoryPlus.Collections;
+using Devdog.General2;
+using Devdog.Rucksack.Items;
+using Devdog.Rucksack.Collections;
 using UnityEngine;
 
 // Creating a product is simple.
@@ -51,8 +51,8 @@ A `Customer<T>` is a simple wrapper class that defines a customer that wisher to
 
 ```csharp
 using System;
-using Devdog.General;
-using Devdog.InventoryPlus.Collections;
+using Devdog.General2;
+using Devdog.Rucksack.Collections;
 using UnityEngine;
 
 // Create the vendor's collections and the vendor.
