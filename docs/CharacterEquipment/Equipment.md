@@ -18,6 +18,43 @@ The mountpoints are responsible for visualizing the items onto the characters. B
 
 You can create mountpoints by attaching one of these to a GameObject on your character. It will automatically show up in the Unity Equippable Character component. You'll then specify which mountpoint an item can use by typing its name in the Item's Mount Point field under Equippable Item Info in the Rucksack Manager.
 
+## Equipping An Item
+
+You can equip an item with the `IItemInstance.Use()` function. The example below gets the Item Instance from the UI slot and equips it to the current player character.
+
+```cs
+using Devdog.General2;
+using Devdog.Rucksack.Items;
+using Devdog.Rucksack.UI;
+using UnityEngine;
+
+public class EquipmentUISlotPrefab : MonoBehaviour {
+    private IItemInstance itemInstance;
+    // Default ItemContext is fine to get things working
+    private ItemContext itemContext = new ItemContext();
+
+    private void Start() {
+        // Get a reference to the ItemInstance in the UI Slot
+        itemInstance = GetComponent<ItemCollectionSlotUI>().current;
+    }
+
+    // Link this in a UI button click/touch to equip this item
+    public void Equip() {
+        // Attempt to equip the item to the current player
+        var equippedResult = itemInstance.Use(PlayerManager.currentPlayer, itemContext);
+        
+        // Check the result of the action to see if it worked
+        if (equippedResult.error == null) {
+            // The Equip action succeeded. 
+            Debug.Log("Item equipped!");
+        } else {
+            // Something went wrong.
+            Debug.Log("Equip error:" + equippedResult.error.message);
+        }
+    }
+}
+```
+
 ## UnityEquippableCharacter
 
 The `UnityEquippableCharacter` is the built-in equippable character class for equippable characters. This class can be used 9/10 times. If you like more customization you can implement the `IEquippableCharacter<T>` interface.
