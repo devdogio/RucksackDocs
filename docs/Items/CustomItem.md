@@ -32,6 +32,9 @@ using UnityEngine;
 [System.Serializable]
 public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 {
+	public float strengthMultiplier = 1.0f;
+	public float healthMultiplier = 1.0f;
+
 	// For (de)serialization...
 	protected MyItemInstance()
 	{ }
@@ -68,6 +71,9 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 	public override Result<ItemUsedResult> DoUse(Character character, ItemContext useContext)
 	{
 		// Do something fancy here...
+		var myComponent = character.GetComponent<MyComponent>();
+		myComponent.strengthMultiplier *= strengthMultiplier;
+		myComponent.healthMultiplier *= strengthMultiplier;
 
 		return new Result<ItemUsedResult>(new ItemUsedResult(useContext.useAmount, false, 0f));
 	}
@@ -91,8 +97,22 @@ public class MyItemDefinition : UnityItemDefinition
 	private int _level;
 	public int level
 	{
-		get { return _level; }
+		get { return this.GetValue(t => t._level); }
 	}
+}
+```
+
+## Custom character component
+
+This is just a simple example of a component that can be attached to your character that an item can interact with.
+
+```csharp
+public class MyComponent : MonoBehaviour
+{
+	public float strengthMultiplier = 1.0f;
+	public float healthMultiplier = 1.0f;
+	
+	public int playerLevel = 4;
 }
 ```
 
@@ -101,7 +121,7 @@ public class MyItemDefinition : UnityItemDefinition
 The `ItemFactory` is a simple static class that is used to create new item instances of item definition types.
 
 !!! note
-​	For each custom item definition type you have to register a binding with an instance type in the item factory.
+	For each custom item definition type you have to register a binding with an instance type in the item factory.
 
 ```csharp
 // Create a binding between the UnityItemDefinition and the UnityItemInstance.
@@ -109,5 +129,6 @@ The `ItemFactory` is a simple static class that is used to create new item insta
 ItemFactory.Bind<UnityItemDefinition, UnityItemInstance>();
 
 // Creates a new instance for the given itemDefinition. Based on the itemDefinition type and the set bindings a new instance will be returned.
-var inst = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid());
+var inst = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid()) as MyItemInstance;
+inst.healthMultiplier = 1.1f;
 ```
