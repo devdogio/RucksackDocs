@@ -40,6 +40,7 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 	{ }
 
 	public MyItemInstance(Guid ID, IUnityItemDefinition itemDefinition)
+		: base(ID, itemDefinition)
 	{
 		if (itemDefinition == null)
 		{
