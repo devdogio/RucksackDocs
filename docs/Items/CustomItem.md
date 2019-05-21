@@ -133,3 +133,9 @@ ItemFactory.Bind<UnityItemDefinition, UnityItemInstance>();
 var inst = ItemFactory.CreateInstance(itemDefinition, System.Guid.NewGuid()) as MyItemInstance;
 inst.healthMultiplier = 1.1f;
 ```
+!!! note
+Keep in mind that if you're going to create a item instance this item will be to registered in item registry. If you don't need this instance anymore unregister this instance.
+
+```csharp
+ItemRegistry.UnRegister(itemGuid);
+```
