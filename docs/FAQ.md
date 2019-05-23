@@ -64,6 +64,14 @@ else{
 }
 ```
 
+### UNet is not working, why?
+
+Unity deprecated UNet in 2019+. Because of this we've decided to split the package off into it's own separate .unity package, downloadable from the [devdog.io](https://devdog.io/unity-assets/rucksack-multiplayer-inventory-system/community-bonus/) website.
+
+### What if I'm using Unity 2019+ and want to utilize networking?
+
+For 2019+ we have a package on the [devdog.io](https://devdog.io/unity-assets/rucksack-multiplayer-inventory-system/community-bonus/) website named mirror. [Mirror](https://github.com/vis2k/Mirror) is a community driven replacement for UNet, that is more stable and has (almost) the same API and method signatures and UNet, making migrations very simple. 
+
 ### How do I create an item instance?
 
 Item instances can be created through the ItemFactory factory. The ItemFactory will return a new instance based on the item definition you pass into it. See [Items](Items/Items.md) for more info.
