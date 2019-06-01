@@ -4,7 +4,7 @@ UNet multiplayer support is built-in, and can be used with minimal setup.
 
 
 !!! warning
-	In order to use UNet you'll have to download the package from the ![https://devdog.io/unity-assets/rucksack-multiplayer-inventory-system/community-bonus/](devdog.io website). Optionally, a mirror package is also available.
+	In order to use UNet you'll have to download the package from the [devdog.io website](https://devdog.io/unity-assets/rucksack-multiplayer-inventory-system/community-bonus/). Optionally, a mirror package is also available.
 
 ## Server authority
 
