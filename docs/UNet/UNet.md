@@ -2,6 +2,10 @@
 
 UNet multiplayer support is built-in, and can be used with minimal setup.
 
+
+!!! warning
+	In order to use UNet you'll have to download the package from the ![https://devdog.io/unity-assets/rucksack-multiplayer-inventory-system/community-bonus/](devdog.io website). Optionally, a mirror package is also available.
+
 ## Server authority
 
 The server is authoritative, meaning that the server decides everything for the player. The player can request certain actions from the server (such as using an item), however, the server will always validate and decide if the action is permitted. This prevents cheating, but does add a roundtrip to the server for each networked action.
