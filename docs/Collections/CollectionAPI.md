@@ -138,6 +138,24 @@ The **GetCanAddAmount** method will return the total amount of items you can add
 var canAdd = collection.GetCanAddAmount(myItem);
 ```
 
+**Clear** collection from all items.
+
+```csharp
+collection.Clear();
+```
+
+!!! note
+***collection.Clear()*** will remove all item instances from collection but not from registry. If you don't need this instances anymore you should unregister this instance.
+
+```csharp
+//unregistering instances from item register
+forech(var itemInstance in collection)
+{
+   ItemRegistry.Unregister(itemInstance);
+}
+collection.Clear();
+```
+
 ## Using results
 
 Most collection methods return a `Result<T>` type. Results store both the value and an optional error. When the error is empty the action is considered a success and the result field will be filled. If the error is not empty the action did not succeed and the collection remains unaffected.
