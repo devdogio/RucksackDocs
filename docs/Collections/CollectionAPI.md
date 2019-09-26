@@ -114,7 +114,7 @@ var index = collection.IndexOf(myItem);
 Using a **predicate to find** your item in the collection.
 
 ```csharp
-var index = collection.IndexOf(o => o.name.Contains("Apple"));
+var index = collection.IndexOf(o => o.itemDefinition.name.Contains("Apple"));
 ```
 
 Getting the **amount of items** in a collection.
