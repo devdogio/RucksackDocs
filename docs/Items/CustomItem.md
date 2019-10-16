@@ -41,15 +41,7 @@ public class MyItemInstance : UnityItemInstance, IEquatable<MyItemInstance>
 
 	public MyItemInstance(Guid ID, IUnityItemDefinition itemDefinition)
 		: base(ID, itemDefinition)
-	{
-		if (itemDefinition == null)
-		{
-			throw new ArgumentException("Given ItemDefintiion is null!");
-		}
-
-		this.ID = ID;
-		this.itemDefinition = itemDefinition;
-	}
+	{ }
 
 	public override Result<bool> CanUse(Character character, ItemContext useContext)
 	{
